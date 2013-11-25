@@ -7,6 +7,12 @@ GIT
       rake (>= 0.8.7)
 
 GIT
+  remote: git://github.com/voxdolo/decent_exposure.git
+  revision: 0abb2be529c512efb4f737135e40eaa74401c0ce
+  specs:
+    decent_exposure (2.3.0)
+
+GIT
   remote: git@github.com:mzaragoza/rails-erd.git
   revision: 678586eb399c5adb57225d333e72e6d2aada1501
   specs:
@@ -54,13 +60,19 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    airbrake (3.1.14)
+      builder
+      json
     arel (4.0.1)
     atomic (1.1.14)
+    awesome_print (1.2.0)
+    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser (0.2.1)
     builder (3.1.4)
     capybara (2.2.0)
       mime-types (>= 1.16)
@@ -94,6 +106,12 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.4)
+    devise (3.2.1)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
     email_spec (1.5.0)
@@ -101,11 +119,16 @@ GEM
       mail (~> 2.2)
     erubis (2.7.0)
     execjs (2.0.2)
+    fabrication (2.9.3)
+    fabrication-rails (0.0.1)
+      fabrication
+      railties (>= 3.0)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    ffaker (1.22.1)
     ffi (1.9.3)
     foreman (0.63.0)
       dotenv (>= 0.7)
@@ -139,6 +162,7 @@ GEM
     multi_test (0.0.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    orm_adapter (0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
     populator (1.0.0)
@@ -222,6 +246,8 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     watir-webdriver (0.6.4)
       selenium-webdriver (>= 2.18.0)
     websocket (1.0.7)
@@ -232,16 +258,24 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   annotate!
+  awesome_print
+  bcrypt-ruby
   better_errors
   binding_of_caller
+  browser
   capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails!
   database_cleaner
   debugger
+  decent_exposure!
+  devise
   email_spec
+  fabrication-rails
   factory_girl_rails
+  ffaker
   foreman
   haml
   jbuilder (~> 1.2)
