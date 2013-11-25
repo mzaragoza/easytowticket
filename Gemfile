@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml'
 
+gem 'newrelic_rpm'
 gem 'devise'
 gem 'fabrication-rails'
 gem 'decent_exposure', :git => 'git://github.com/voxdolo/decent_exposure.git'
