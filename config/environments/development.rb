@@ -1,4 +1,5 @@
 Easytowticket::Application.configure do
+  AwesomePrint.irb!
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -26,4 +27,15 @@ Easytowticket::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Action Mailer Config
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
+  #:debug, :info, :warn, :error, :fatal, :unknown,
+  config.log_level = :info
+
 end
