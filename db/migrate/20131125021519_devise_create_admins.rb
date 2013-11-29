@@ -4,6 +4,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
     create_table "accounts", force: true do |t|
       t.string   "name",            :null => false, default: ""
       t.string   "domain",          :null => false, default: ""
+      t.string   "logo",            :null => false, default: ""
       t.boolean  "active",          :null => false, default: true
       t.string   "subdomain",       :null => false, default: ""
 
@@ -31,8 +32,8 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       t.string :phone,              :null => false, default: ""
       t.string :occupation,         :null => false, default: ""
       t.boolean :active,            default: true
+      t.boolean :is_admin,          default: false
       t.boolean :newsletter,        default: true
-      t.date :birthday
 
       ## Recoverable
       t.string   :reset_password_token

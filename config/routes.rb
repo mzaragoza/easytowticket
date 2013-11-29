@@ -12,6 +12,7 @@ Easytowticket::Application.routes.draw do
       resources :admins
       resources :profile, :only => [:edit, :update]
       resources :users
+      resources :profile, :only => [:edit, :update]
       get '/dashboard' => 'dashboards#index', as: :dashboard
       get '/' => 'dashboards#index'
     end

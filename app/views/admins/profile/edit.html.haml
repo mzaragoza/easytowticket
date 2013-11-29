@@ -1,0 +1,38 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.icon-magic
+      Update Profile
+  .mws-panel-body.no-padding
+    = simple_form_for(admin, :url => admins_profile_path(admin), :html => {:class => 'mws-form' }) do |f|
+      .mws-form-row
+        %label.mws-form-label= t(:first_name)
+        .mws-form-item
+        = f.input :first_name, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:last_name)
+        .mws-form-item
+        = f.input :last_name, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:phone)
+        .mws-form-item
+        = f.input :phone, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:email)
+        .mws-form-item
+        = f.input :email, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:active)
+        .mws-form-item
+        = f.input :active, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:password)
+        .mws-form-item
+        = f.input :password, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        %label.mws-form-label= t(:password_confirmation)
+        .mws-form-item
+        = f.input :password_confirmation, :label => false, input_html: { class: 'required small', size: '' }
+      .mws-form-row
+        .mws-form-item
+        = f.button :submit, :class => 'btn btn-info'

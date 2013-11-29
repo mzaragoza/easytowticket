@@ -1,6 +1,107 @@
-= stylesheet_link_tag "admins/default", media: "all", "data-turbolinks-track" => true
-= javascript_include_tag "admins/admins", "data-turbolinks-track" => true
-= csrf_meta_tags
-= link_to t(:log_out), destroy_admin_session_path, :method => :delete
-
-= yield
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    / Viewport Metatag
+    %meta{content: "width=device-width,initial-scale=1.0", name: "viewport"}/
+    = stylesheet_link_tag "admins/default", media: "all", "data-turbolinks-track" => true
+    %title Site Name
+  = csrf_meta_tags
+  %body
+    #mws-header.clearfix
+      / Logo Container
+      #mws-logo-container
+        / Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+          %img{alt: "mws admin", src: "/assets/images/mws-logo.png"}/
+      / User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        #mws-user-info.mws-inset
+          / User Photo
+          #mws-user-photo
+            %img{alt: "User Photo", src: "/assets/example/profile.jpg"}/
+          / Username and Functions
+          #mws-user-functions
+            #mws-username
+              Hello,
+              = current_admin.name
+            %ul
+              %li
+                = link_to t(:profile), edit_admins_profile_path(current_admin)
+              %li
+                = link_to t(:Logout), destroy_admin_session_path, :method => :delete
+    / Start Main Wrapper
+    #mws-wrapper
+      / Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      / Sidebar Wrapper
+      #mws-sidebar
+        / Hidden Nav Collapse Button
+        #mws-nav-collapse
+          %span
+          %span
+          %span
+        #mws-navigation
+          %ul
+            %li
+              = link_to admins_dashboard_path do
+                %i.icon-home
+                Dashboard
+            %li
+              = link_to '#' do
+                %i.icon-graph
+                More Nav
+      / Main Container Start
+      #mws-container.clearfix
+        / Inner Container Start
+        .container
+          / Statistics Button Container
+          .mws-stat-container.clearfix
+            / Statistic Item
+            %a.mws-stat{href: "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Item1
+                %span.mws-stat-value Count
+            / Statistic Item
+            %a.mws-stat{href: "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Item2 
+                %span.mws-stat-value Count
+            / Statistic Item
+            %a.mws-stat{href: "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Item3
+                %span.mws-stat-value Count
+            / Statistic Item
+            %a.mws-stat{href: "#"}
+              / Statistic Icon (edit to change icon)
+              %span.mws-stat-icon.icol32-building
+              / Statistic Content
+              %span.mws-stat-content
+                %span.mws-stat-title Item4
+                %span.mws-stat-value Count 
+          / Panels Start
+          = yield
+          / Panels End
+        / Inner Container End
+        / Footer
+        #mws-footer
+          ="Copyright Your Website 2012- #{Date.today.year}. All Rights Reserved."
+      / Main Container End
+    / JavaScript Plugins
+    = javascript_include_tag "admins/admins", "data-turbolinks-track" => true

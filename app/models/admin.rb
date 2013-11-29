@@ -7,6 +7,8 @@ class Admin < ActiveRecord::Base
 
   validates_uniqueness_of :email, :scope => :account_id, :case_sensitive => false
 
+  attr_accessor :updating_password
+
   def name
    full_name
   end
@@ -15,6 +17,9 @@ class Admin < ActiveRecord::Base
     (first_name + ' ' + last_name).titleize
   end
 
+  def should_validate_password?
+      updating_password || new_record?
+  end
   protected
 
   def self.find_for_database_authentication(warden_conditions)

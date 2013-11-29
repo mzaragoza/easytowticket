@@ -13,7 +13,6 @@ Fabricator(:admin) do
   phone { Faker::PhoneNumber.short_phone_number }
   time_zone 'Eastern Time (US & Canada)'
   active  true
-  birthday { Faker::Time.date :year_range => 65}
   after_build do |a|
     a.account ||= Account.last || Fabricate(:account)
   end

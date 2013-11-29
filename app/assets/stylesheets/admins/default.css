@@ -1,0 +1,27 @@
+/*
+  *= require plugins/colorpicker/colorpicker
+  *= require bootstrap/css/bootstrap
+  *= require css/fonts/ptsans/stylesheet
+  *= require css/fonts/icomoon/style
+  *= require css/shared
+  *= require css/core
+  *= require css/panels
+  *= require css/table
+  *= require css/gallery
+  *= require css/button
+  *= require css/statistic
+  *= require css/form
+  *= require css/error
+  *= require css/tweaks
+  *= require css/plugins
+  *= require css/lt-ie9
+  *= require css/icons/icol16
+  *= require css/icons/icol32
+  *= require css/demo
+  *= require jui/css/jquery.ui.all
+  *= require jui/jquery-ui.custom
+  *= require css/mws-theme
+  *= require css/themer
+  *= require_self
+ */
+

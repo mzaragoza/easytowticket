@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131125021519) do
   create_table "accounts", force: true do |t|
     t.string   "name",       default: "",   null: false
     t.string   "domain",     default: "",   null: false
+    t.string   "logo",       default: "",   null: false
     t.boolean  "active",     default: true, null: false
     t.string   "subdomain",  default: "",   null: false
     t.datetime "created_at"
@@ -31,26 +32,26 @@ ActiveRecord::Schema.define(version: 20131125021519) do
 
   create_table "admins", force: true do |t|
     t.integer  "account_id"
-    t.string   "email",                  default: "",   null: false
-    t.string   "encrypted_password",     default: "",   null: false
-    t.string   "first_name",             default: "",   null: false
-    t.string   "last_name",              default: "",   null: false
-    t.string   "address",                default: "",   null: false
-    t.string   "address2",               default: "",   null: false
-    t.string   "city",                   default: "",   null: false
-    t.string   "state",                  default: "",   null: false
-    t.string   "zip_code",               default: "",   null: false
-    t.string   "country",                default: "",   null: false
-    t.string   "time_zone",              default: "",   null: false
-    t.string   "phone",                  default: "",   null: false
-    t.string   "occupation",             default: "",   null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "first_name",             default: "",    null: false
+    t.string   "last_name",              default: "",    null: false
+    t.string   "address",                default: "",    null: false
+    t.string   "address2",               default: "",    null: false
+    t.string   "city",                   default: "",    null: false
+    t.string   "state",                  default: "",    null: false
+    t.string   "zip_code",               default: "",    null: false
+    t.string   "country",                default: "",    null: false
+    t.string   "time_zone",              default: "",    null: false
+    t.string   "phone",                  default: "",    null: false
+    t.string   "occupation",             default: "",    null: false
     t.boolean  "active",                 default: true
+    t.boolean  "is_admin",               default: false
     t.boolean  "newsletter",             default: true
-    t.date     "birthday"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,    null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -59,7 +60,7 @@ ActiveRecord::Schema.define(version: 20131125021519) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,    null: false
+    t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
