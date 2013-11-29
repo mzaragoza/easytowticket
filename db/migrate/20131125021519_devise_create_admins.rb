@@ -2,13 +2,12 @@ class DeviseCreateAdmins < ActiveRecord::Migration
   def change
 
     create_table "accounts", force: true do |t|
-      t.string   "name",            default: ""
-      t.string   "domain",          default: ""
-      t.boolean  "enable_gambling", default: true
-      t.boolean  "active",          default: true
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.string   "subdomain",       default: ""
+      t.string   "name",            :null => false, default: ""
+      t.string   "domain",          :null => false, default: ""
+      t.boolean  "active",          :null => false, default: true
+      t.string   "subdomain",       :null => false, default: ""
+
+      t.timestamps
     end
 
     add_index "accounts", ["domain"], name: "index_accounts_on_domain", unique: true, using: :btree
@@ -18,19 +17,19 @@ class DeviseCreateAdmins < ActiveRecord::Migration
     create_table(:admins) do |t|
       ## Database authenticatable
       t.integer :account_id
-      t.string :email,              :null => false, :default => ""
-      t.string :encrypted_password, :null => false, :default => ""
-      t.string :first_name,         :null => false, :default => ""
-      t.string :last_name,          :null => false, :default => ""
-      t.string :address,            :null => false, :default => ""
-      t.string :address2,           :null => false, :default => ""
-      t.string :city,               :null => false, :default => ""
-      t.string :state,              :null => false, :default => ""
-      t.string :zip_code,           :null => false, :default => ""
-      t.string :country,            :null => false, :default => ""
-      t.string :time_zone,          :null => false, :default => ""
-      t.string :phone,              :null => false, :default => ""
-      t.string :occupation,         :null => false, :default => ""
+      t.string :email,              :null => false, default: ""
+      t.string :encrypted_password, :null => false, default: ""
+      t.string :first_name,         :null => false, default: ""
+      t.string :last_name,          :null => false, default: ""
+      t.string :address,            :null => false, default: ""
+      t.string :address2,           :null => false, default: ""
+      t.string :city,               :null => false, default: ""
+      t.string :state,              :null => false, default: ""
+      t.string :zip_code,           :null => false, default: ""
+      t.string :country,            :null => false, default: ""
+      t.string :time_zone,          :null => false, default: ""
+      t.string :phone,              :null => false, default: ""
+      t.string :occupation,         :null => false, default: ""
       t.boolean :active,            default: true
       t.boolean :newsletter,        default: true
       t.date :birthday

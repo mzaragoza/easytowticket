@@ -1,0 +1,6 @@
+= stylesheet_link_tag "admins/default", media: "all", "data-turbolinks-track" => true
+= javascript_include_tag "admins/admins", "data-turbolinks-track" => true
+= csrf_meta_tags
+= link_to t(:log_out), destroy_admin_session_path, :method => :delete
+
+= yield

@@ -20,6 +20,7 @@ gem 'ffaker'
 gem 'airbrake'
 gem 'bcrypt-ruby'
 gem 'browser'
+gem 'simple_form'
 
 
 

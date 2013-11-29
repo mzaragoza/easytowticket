@@ -17,13 +17,12 @@ ActiveRecord::Schema.define(version: 20131125021519) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.string   "name",            default: ""
-    t.string   "domain",          default: ""
-    t.boolean  "enable_gambling", default: true
-    t.boolean  "active",          default: true
+    t.string   "name",       default: "",   null: false
+    t.string   "domain",     default: "",   null: false
+    t.boolean  "active",     default: true, null: false
+    t.string   "subdomain",  default: "",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "subdomain",       default: ""
   end
 
   add_index "accounts", ["domain"], name: "index_accounts_on_domain", unique: true, using: :btree

@@ -7,8 +7,6 @@
  *
  */
 
-@import url("form.css");
-@import url("button.css");
 
 /* Body
 ================================================== */
@@ -50,7 +48,7 @@ body {
 ================================================== */
 
 #mws-login {
-    background-image: url(../images/core/mws-dark-bg.png);
+    background-image: url(/assets/images/core/mws-dark-bg.png);
     position: relative;
     padding: 12px 16px;
     border: 1px solid #c0c0c0;
@@ -69,13 +67,13 @@ body {
     font-size: 18px;
     margin: 0;
     position: relative;
-    background-image: url(../images/core/mws-login-stitch.png);
+    background-image: url(/assets/images/core/mws-login-stitch.png);
     background-repeat: repeat-x;
     background-position: left bottom;
 }
 
 #mws-login .mws-login-lock {
-    background-image: url(../images/core/mws-login-circle.png);
+    background-image: url(/assets/images/core/mws-login-circle.png);
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
@@ -101,7 +99,7 @@ body {
 ================================================== */
 
 #mws-login form {
-    background-image: url(../images/core/mws-login-stitch.png);
+    background-image: url(/assets/images/core/mws-login-stitch.png);
     background-repeat: repeat-x;
     background-position: left bottom;
     position: relative;
@@ -122,13 +120,13 @@ body {
 }
 
 #mws-login .mws-login-username {
-    background-image: url(icons/icol16/src/user.png);
+    background-image: url(/assets/css/icons/icol16/src/user.png);
     background-repeat: no-repeat;
     background-position: 8px center;
 }
 
 #mws-login .mws-login-password {
-    background-image: url(icons/icol16/src/key.png);
+    background-image: url(/assets/css/icons/icol16/src/key.png);
     background-repeat: no-repeat;
     background-position: 8px center;
 }

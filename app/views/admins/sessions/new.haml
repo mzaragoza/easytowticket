@@ -1,0 +1,21 @@
+#mws-login
+  %h1 Login
+  .mws-login-lock
+    %i.icon-lock
+  #mws-login-form
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), class: 'mws-form') do |f|
+      = f.error_notification
+      .mws-form-row
+        .mws-form-item
+          = f.input :email, label: false, input_html: { class: 'mws-login-username required', placeholder: t(:email).to_s.titleize }
+        .mws-form-item
+          = f.input :password, label: false, input_html: { class: 'mws-login-password required', placeholder: t(:password).to_s.titleize }
+      #mws-login-remember.mws-form-row.mws-inset
+        %ul.mws-form-list.inline
+          %li
+            = f.input  :remember_me, :as => :boolean, input_html: { :checked => "checked"}, :inline_label => t(:remember_me).to_s.titleize if devise_mapping.rememberable?
+          %li= link_to t(:forgot_your_password).to_s.titleize, new_password_path(resource_name), class: 'password'
+        = f.hidden_field :account_id, :value => current_account.id
+      .mws-form-row
+        = button_tag t(:login).to_s.titleize, :class => 'btn btn-success mws-login-button'
+

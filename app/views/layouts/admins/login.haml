@@ -15,24 +15,6 @@
     = csrf_meta_tags
   %body
     #mws-login-wrapper
-      #mws-login
-        %h1 Login
-        .mws-login-lock
-          %i.icon-lock
-        #mws-login-form
-          %form.mws-form{action: "dashboard.html", method: "post"}
-            .mws-form-row
-              .mws-form-item
-                %input.mws-login-username.required{name: "username", placeholder: "username", type: "text"}/
-            .mws-form-row
-              .mws-form-item
-                %input.mws-login-password.required{name: "password", placeholder: "password", type: "password"}/
-            #mws-login-remember.mws-form-row.mws-inset
-              %ul.mws-form-list.inline
-                %li
-                  %input#remember{type: "checkbox"}/
-                  %label{for: "remember"} Remember me
-            .mws-form-row
-              %input.btn.btn-success.mws-login-button{type: "submit", value: "Login"}/
+      = yield
     / JavaScript Plugins
     = javascript_include_tag "admins/login", "data-turbolinks-track" => true
