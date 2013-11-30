@@ -1,0 +1,28 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Tickets 
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th
+          %th created_by
+          %th location_of_viecle
+          %th name
+          %th phone
+          %th address
+          %th millage
+          %th servie
+      %tbody
+        - tickets.each do |t|
+          %tr
+            %td Show
+            %td created_by
+            %td location_of_viecle
+            %td name
+            %td phone
+            %td address
+            %td millage
+            %td servie

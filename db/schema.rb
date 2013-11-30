@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125021519) do
+ActiveRecord::Schema.define(version: 20131129222903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,5 +71,51 @@ ActiveRecord::Schema.define(version: 20131125021519) do
   add_index "admins", ["email", "account_id"], name: "index_admins_on_email_and_account_id", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
   add_index "admins", ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
+
+  create_table "tickets", force: true do |t|
+    t.integer  "account_id"
+    t.integer  "created_by_id"
+    t.string   "location_of_viecle",                     default: ""
+    t.string   "name",                                   default: ""
+    t.string   "phone",                                  default: ""
+    t.string   "address",                                default: ""
+    t.string   "zip",                                    default: ""
+    t.integer  "millage_finish"
+    t.integer  "millage_start"
+    t.datetime "servie_time_finish"
+    t.datetime "servie_time_start"
+    t.string   "extra_person_finish",                    default: ""
+    t.string   "extra_person_start",                     default: ""
+    t.string   "extra_person_total",                     default: ""
+    t.string   "car_year",                               default: ""
+    t.string   "car_make",                               default: ""
+    t.string   "car_model",                              default: ""
+    t.string   "car_color",                              default: ""
+    t.string   "driver",                                 default: ""
+    t.string   "state",                                  default: ""
+    t.string   "license_number",                         default: ""
+    t.string   "vehicle_id",                             default: ""
+    t.boolean  "sling",                                  default: true,  null: false
+    t.boolean  "hoist_tow",                              default: false, null: false
+    t.boolean  "wheel_lift",                             default: false, null: false
+    t.boolean  "flad_bed",                               default: false, null: false
+    t.boolean  "start",                                  default: false, null: false
+    t.boolean  "lock_out",                               default: false, null: false
+    t.boolean  "flat_tire",                              default: false, null: false
+    t.boolean  "out_of_gas",                             default: false, null: false
+    t.boolean  "wreck",                                  default: false, null: false
+    t.boolean  "recoverty",                              default: false, null: false
+    t.string   "other",                                  default: ""
+    t.boolean  "special_equipment_single_line_winching", default: false, null: false
+    t.boolean  "special_equipment_dual_line_winching",   default: false, null: false
+    t.boolean  "special_equipment_snatch_blocks",        default: false, null: false
+    t.boolean  "special_equipment_scotch_blocks",        default: false, null: false
+    t.boolean  "special_equipment_dolly",                default: false, null: false
+    t.boolean  "special_equipment_other",                default: false, null: false
+    t.string   "operators_comments",                     default: ""
+    t.string   "status",                                 default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
