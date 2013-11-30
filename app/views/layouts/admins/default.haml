@@ -69,39 +69,39 @@
               %span.mws-stat-icon.icol32-building
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Item1
-                %span.mws-stat-value Count
+                %span.mws-stat-title Tickets All Time
+                %span.mws-stat-value= current_account.tickets.count
             / Statistic Item
             %a.mws-stat{href: "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-building
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Item2 
-                %span.mws-stat-value Count
+                %span.mws-stat-title Tickets This Year
+                %span.mws-stat-value= current_account.tickets.where(:created_at => Date.today.beginning_of_year..Date.today.end_of_year).count
             / Statistic Item
             %a.mws-stat{href: "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-building
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Item3
-                %span.mws-stat-value Count
+                %span.mws-stat-title Tickets This Month
+                %span.mws-stat-value= current_account.tickets.where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).count
             / Statistic Item
             %a.mws-stat{href: "#"}
               / Statistic Icon (edit to change icon)
               %span.mws-stat-icon.icol32-building
               / Statistic Content
               %span.mws-stat-content
-                %span.mws-stat-title Item4
-                %span.mws-stat-value Count 
+                %span.mws-stat-title Tickets This Week
+                %span.mws-stat-value= current_account.tickets.where(:created_at => Date.today.beginning_of_week..Date.today.end_of_week).count 
           / Panels Start
           = yield
           / Panels End
         / Inner Container End
         / Footer
         #mws-footer
-          ="Copyright Your Website 2012- #{Date.today.year}. All Rights Reserved."
+          ="Copyright Easy Tow Tickets 2012- #{Date.today.year}. All Rights Reserved."
       / Main Container End
     / JavaScript Plugins
     = javascript_include_tag "admins/admins", "data-turbolinks-track" => true

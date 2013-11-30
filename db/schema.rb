@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20131129222903) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.string   "name",       default: "",   null: false
-    t.string   "domain",     default: "",   null: false
-    t.string   "logo",       default: "",   null: false
-    t.boolean  "active",     default: true, null: false
-    t.string   "subdomain",  default: "",   null: false
+    t.string   "name",       default: "",                           null: false
+    t.string   "logo",       default: "",                           null: false
+    t.string   "domain",     default: "",                           null: false
+    t.string   "subdomain",  default: "",                           null: false
+    t.string   "time_zone",  default: "Eastern Time (US & Canada)", null: false
+    t.boolean  "active",     default: true,                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -95,7 +96,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "state",                                  default: ""
     t.string   "license_number",                         default: ""
     t.string   "vehicle_id",                             default: ""
-    t.boolean  "sling",                                  default: true,  null: false
+    t.boolean  "sling",                                  default: false, null: false
     t.boolean  "hoist_tow",                              default: false, null: false
     t.boolean  "wheel_lift",                             default: false, null: false
     t.boolean  "flad_bed",                               default: false, null: false
@@ -111,7 +112,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.boolean  "special_equipment_snatch_blocks",        default: false, null: false
     t.boolean  "special_equipment_scotch_blocks",        default: false, null: false
     t.boolean  "special_equipment_dolly",                default: false, null: false
-    t.boolean  "special_equipment_other",                default: false, null: false
+    t.string   "special_equipment_other",                default: ""
     t.string   "operators_comments",                     default: ""
     t.string   "status",                                 default: ""
     t.datetime "created_at"

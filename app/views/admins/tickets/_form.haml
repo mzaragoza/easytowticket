@@ -1,0 +1,130 @@
+= simple_form_for([:admins, ticket], :html => {:class => 'mws-form' }) do |f|
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:location_of_viecle)
+      .mws-form-item
+        = f.input :location_of_viecle, as: :text, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:name)
+      .mws-form-item
+        = f.input :name, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:phone)
+      .mws-form-item
+        = f.input :phone, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:address)
+      .mws-form-item
+        = f.input :address, as: :text, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:zip)
+      .mws-form-item
+        = f.input :zip, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:millage_finish)
+      .mws-form-item
+        = f.input :millage_finish, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:millage_start)
+      .mws-form-item
+        = f.input :millage_start, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:servie_time_finish)
+      .mws-form-item
+        = f.input :servie_time_finish, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:servie_time_start)
+      .mws-form-item
+        = f.input :servie_time_start, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:extra_person_finish)
+      .mws-form-item
+        = f.input :extra_person_finish, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:extra_person_start)
+      .mws-form-item
+        = f.input :extra_person_start, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:extra_person_total)
+      .mws-form-item
+        = f.input :car_year, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:car_make)
+      .mws-form-item
+        = f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:car_color)
+      .mws-form-item
+        = f.input :car_color, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:driver)
+      .mws-form-item
+        = f.input :driver, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:state)
+      .mws-form-item
+        = f.input :state, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:license_number)
+      .mws-form-item
+        = f.input :license_number, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:vehicle_id)
+      .mws-form-item
+        = f.input :vehicle_id, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:NEED_NAME)
+      .mws-form-item
+        = f.input :sling
+        = f.input :hoist_tow
+        = f.input :wheel_lift
+        = f.input :flad_bed
+        = f.input :start
+        = f.input :lock_out
+        = f.input :flat_tire
+        = f.input :out_of_gas
+        = f.input :wreck
+        = f.input :recoverty
+        = f.input :other, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:special_equipment)
+      .mws-form-item
+        = f.input :special_equipment_single_line_winching
+        = f.input :special_equipment_dual_line_winching
+        = f.input :special_equipment_snatch_blocks
+        = f.input :special_equipment_scotch_blocks
+        = f.input :special_equipment_dolly
+        = f.input :special_equipment_other, :label => t(:other), input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:operators_comments)
+      .mws-form-item
+        = f.input :operators_comments, as: :text, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:status)
+      .mws-form-item
+        = f.input :status, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-button-row
+    = f.button :submit, :class => 'btn btn-info'
+    %input.btn{type: "reset", value: "Reset"}/
+

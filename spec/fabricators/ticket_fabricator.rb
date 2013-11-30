@@ -40,7 +40,7 @@ Fabricator(:ticket) do
   status                                   { ['inshop'].sample }
   after_build do |t|
     t.account ||= Account.last || Fabricate(:account)
-    #t.created_by ||= Admin.last || Fabricate(:admin)
+    t.created_by ||= t.account.admins.last || Fabricate(:admin, :account_id => t.account)
   end
 end
 

@@ -1,28 +1,94 @@
 .mws-panel.grid_8
   .mws-panel-header
+    .pull-right
+      = link_to 'Add', new_admins_ticket_path, class: 'btn'
     %span
       %i.icon-table
-      Tickets 
+      Tickets
   .mws-panel-body.no-padding
     %table.mws-datatable-fn.mws-table
       %thead
         %tr
           %th
-          %th created_by
-          %th location_of_viecle
-          %th name
-          %th phone
-          %th address
-          %th millage
-          %th servie
+          %th= t(:created_by)
+          %th= t(:created_at)
+          %th= t(:location_of_viecle)
+          %th= t(:name)
+          %th= t(:phone)
+          %th= t(:address)
+          %th= t(:millage)
+          %th= t(:servie)
+          %th= t(:extra_person_finish)
+          %th= t(:extra_person_start)
+          %th= t(:extra_person_total)
+          %th= t(:car_year)
+          %th= t(:car_make)
+          %th= t(:car_model)
+          %th= t(:car_color)
+          %th= t(:driver)
+          %th= t(:state)
+          %th= t(:license_number)
+          %th= t(:vehicle_id)
+          %th= t(:NEED_NAME)
+          %th= t(:special_equipment)
+          %th= t(:updated_at)
       %tbody
         - tickets.each do |t|
           %tr
-            %td Show
-            %td created_by
-            %td location_of_viecle
-            %td name
-            %td phone
-            %td address
-            %td millage
-            %td servie
+            %td= link_to 'Show', admins_ticket_path(t), class: 'btn'
+            %td= t.created_by.name if t.created_by_id
+            %td= t.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+            %td= t.location_of_viecle
+            %td= t.name
+            %td= number_to_phone(t.phone)
+            %td= t.address
+            %td= t.millage
+            %td= t.servie
+            %td= t.extra_person_finish
+            %td= t.extra_person_start
+            %td= t.extra_person_total
+            %td= t.car_year
+            %td= t.car_make
+            %td= t.car_model
+            %td= t.car_color
+            %td= t.driver
+            %td= t.state
+            %td= t.license_number
+            %td= t.vehicle_id
+            %td
+              - if t.sling
+                .badge.badge-info= 'Sling'
+              - if t.hoist_tow
+                .badge.badge-info= 'Hoist Tow'
+              - if t.wheel_lift
+                .badge.badge-info= 'Wheel Lift'
+              - if t.flad_bed
+                .badge.badge-info= 'Flad Bed'
+              - if t.start
+                .badge.badge-info= 'Start'
+              - if t.lock_out
+                .badge.badge-info= 'Lock Out'
+              - if t.flat_tire
+                .badge.badge-info= 'Flat Tire'
+              - if t.out_of_gas
+                .badge.badge-info= 'Out Of Gas'
+              - if t.wreck
+                .badge.badge-info= 'Wreck'
+              - if t.recoverty
+                .badge.badge-info= 'Recoverty'
+              - unless t.other.empty?
+                .badge.badge-info= 'Other ' + t.other
+            %td
+              - if t.special_equipment_single_line_winching?
+                .badge.badge-info= 'Single Line Winching'
+              - if t.special_equipment_dual_line_winching
+                .badge.badge-info= 'Fual Line Winching'
+              - if t.special_equipment_snatch_blocks
+                .badge.badge-info= 'Snatch Blocks'
+              - if t.special_equipment_scotch_blocks
+                .badge.badge-info= 'Scotch Blocks'
+              - if t.special_equipment_dolly
+                .badge.badge-info= 'Dolly'
+              - unless t.special_equipment_other.empty?
+                .badge.badge-info= 'Other ' + t.special_equipment_other
+            %td= t.updated_at.in_time_zone(current_account.time_zone).strftime('%D %r')

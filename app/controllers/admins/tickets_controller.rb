@@ -3,7 +3,8 @@ class Admins::TicketsController < AdminController
   expose(:ticket, attributes: :ticket_params)
 
   def create
-    if ticket.new(ticket_params).save
+    ticket.created_by = current_admin
+    if ticket.save
       redirect_to(admins_tickets_path)
     else
       render :new

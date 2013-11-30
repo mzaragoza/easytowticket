@@ -23,7 +23,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string   :state,                                      default: ''
       t.string   :license_number,                             default: ''
       t.string   :vehicle_id,                                 default: ''
-      t.boolean  :sling,                                      :null => false, default: true
+      t.boolean  :sling,                                      :null => false, default: false
       t.boolean  :hoist_tow,                                  :null => false, default: false
       t.boolean  :wheel_lift,                                 :null => false, default: false
       t.boolean  :flad_bed,                                   :null => false, default: false
@@ -39,7 +39,7 @@ class CreateTickets < ActiveRecord::Migration
       t.boolean  :special_equipment_snatch_blocks,            :null => false, default: false
       t.boolean  :special_equipment_scotch_blocks,            :null => false, default: false
       t.boolean  :special_equipment_dolly,                    :null => false, default: false
-      t.boolean  :special_equipment_other,                    :null => false, default: false
+      t.string   :special_equipment_other,                    default: ''
       t.string   :operators_comments,                         default: ''
       t.string   :status,                                     default: ''
 

@@ -3,10 +3,11 @@ class DeviseCreateAdmins < ActiveRecord::Migration
 
     create_table "accounts", force: true do |t|
       t.string   "name",            :null => false, default: ""
-      t.string   "domain",          :null => false, default: ""
       t.string   "logo",            :null => false, default: ""
-      t.boolean  "active",          :null => false, default: true
+      t.string   "domain",          :null => false, default: ""
       t.string   "subdomain",       :null => false, default: ""
+      t.string   "time_zone",       :null => false, default: "Eastern Time (US & Canada)"
+      t.boolean  "active",          :null => false, default: true
 
       t.timestamps
     end

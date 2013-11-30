@@ -2,6 +2,7 @@ class Admin < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :account
+  has_many :tickets, :foreign_key => "created_by_id"
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
