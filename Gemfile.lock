@@ -13,6 +13,12 @@ GIT
     decent_exposure (2.3.0)
 
 GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: f0316e55d6a46794e56d5e636ea838c9eaef34cb
+  specs:
+    datetimepicker-rails (0.0.8)
+
+GIT
   remote: git@github.com:mzaragoza/rails-erd.git
   revision: 678586eb399c5adb57225d333e72e6d2aada1501
   specs:
@@ -273,6 +279,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails!
   database_cleaner
+  datetimepicker-rails!
   debugger
   decent_exposure!
   devise

@@ -38,12 +38,12 @@
     .mws-form-row.bordered
       %label.mws-form-label= t(:servie_time_finish)
       .mws-form-item
-        = f.input :servie_time_finish, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :servie_time_finish, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:servie_time_start)
       .mws-form-item
-        = f.input :servie_time_start, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :servie_time_start, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:extra_person_finish)
