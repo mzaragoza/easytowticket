@@ -1,0 +1,276 @@
+!!!
+/[if lt IE 7 ] <html class="lt-ie9 lt-ie8 lt-ie7 ie6" lang="en">
+/[if IE 7 ] <html class="lt-ie9 lt-ie8 ie7" lang="en">
+/[if IE 8 ] <html class="lt-ie9 ie8" lang="en">
+/[if IE 9 ] <html class="ie9" lang="en">
+/ [if (gt IE 9)|!(IE)]><!
+%html{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    / @font-face Fonts
+    %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/normalize.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/skeleton.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/typography.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/layout.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/form.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/shortcodes.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/elements.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/ie.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/icons/glyphicons/style.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/icons/zocial/zocial.css", rel: "stylesheet"}/
+    %link{href: "/assets/assets/icons/social/social.css", rel: "stylesheet"}/
+    %link{href: "/assets/plugins/layerslider/css/layerslider.css", rel: "stylesheet"}/
+    %link{href: "/assets/plugins/flexslider/flexslider.css", rel: "stylesheet"}/
+    %link{href: "/assets/plugins/magnificpopup/jquery.magnific-popup.css", rel: "stylesheet"}/
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %title Easy Tow Tickets
+  %body
+    .main-wrap
+      %header.header
+        .container
+          .sixteen.columns
+            .header-row
+              .header-col.brand
+                %a.logo{href: "#"}
+                  %img{alt: "Youxi", src: "/assets/assets/img/brand-logo.png"}/
+                %span.tagline Awesome Responsive Template
+              %nav.header-col.navigation
+                %ul
+                  %li.active
+                    %a{href: "index.html"} Home
+                    %ul
+                      %li
+                        %a{href: "index-2.html"} Home Layout 2
+                      %li
+                        %a{href: "index-3.html"} Home Layout 3
+                      %li
+                        %a{href: "index-4.html"} Home Layout 4
+                      %li
+                        %a{href: "index-5.html"} Top Header
+                      %li
+                        %a{href: "#"} Additional Sliders
+                        %ul
+                          %li
+                            %a{href: "home-flex.html"} FlexSlider
+                          %li
+                            %a{href: "home-nivo.html"} Nivo Slider
+                  %li
+                    %a{href: "#"} Page Templates
+                    %ul
+                      %li
+                        %a{href: "about.html"} About Us
+                      %li
+                        %a{href: "process.html"} Our Process
+                      %li
+                        %a{href: "services.html"} Our Services
+                      %li
+                        %a{href: "history.html"} Our History
+                      %li
+                        %a{href: "team.html"} Our Team
+                      %li
+                        %a{href: "career.html"} Career
+                      %li
+                        %a{href: "fullwidth.html"} Fullwidth
+                      %li
+                        %a{href: "left-sidebar.html"} Left Sidebar
+                      %li
+                        %a{href: "right-sidebar.html"} Right Sidebar
+                      %li
+                        %a{href: "faq.html"} FAQ
+                      %li
+                        %a{href: "#"} Miscellaneous
+                        %ul
+                          %li
+                            %a{href: "countdown.html"} Countdown Page
+                          %li
+                            %a{href: "error.html"} Error Page
+                          %li
+                            %a{href: "sitemap.html"} Sitemap
+                  %li
+                    %a{href: "#"} Features
+                    %ul
+                      %li
+                        %a{href: "shortcodes.html"} Shortcodes
+                      %li
+                        %a{href: "typography.html"} Typography
+                      %li
+                        %a{href: "icons.html"} Icons
+                      %li
+                        %a{href: "media.html"} Media
+                      %li
+                        %a{href: "gallery.html"} Gallery
+                      %li
+                        %a{href: "#"} Form Layouts
+                        %ul
+                          %li
+                            %a{href: "block-form.html"} Block Forms
+                          %li
+                            %a{href: "inline-form.html"} Inline Forms
+                          %li
+                            %a{href: "columned-form.html"} Columned Forms
+                      %li
+                        %a{href: "pricing-table.html"} Pricing Table
+                      %li
+                        %a{href: "#"}
+                          %i.icon-globe
+                          With Icon
+                  %li
+                    %a{href: "portfolio-3.html"} Portfolio
+                    %ul
+                      %li
+                        %a{href: "portfolio-2.html"} Portfolio 2 Columns
+                      %li
+                        %a{href: "portfolio-3.html"} Portfolio 3 Columns
+                      %li
+                        %a{href: "portfolio-4.html"} Portfolio 4 Columns
+                      %li
+                        %a{href: "portfolio-single.html"} Portfolio Details
+                  %li
+                    %a{href: "blog.html"} Blog
+                    %ul
+                      %li
+                        %a{href: "blog-fullwidth.html"} Blog Fullwidth
+                      %li
+                        %a{href: "blog-left.html"} Blog Left Sidebar
+                      %li
+                        %a{href: "blog.html"} Blog Right Sidebar
+                      %li
+                        %a{href: "blog-single.html"} Blog Post
+                  %li
+                    %a{href: "contact.html"} Contact
+      .slider-wrap
+        .layerslider{"data-hover-bottom-nav" => "true", "data-show-bar-timer" => "true", "data-show-circle-timer" => "false", style: "height: 440px;"}
+          .ls-layer{style: "slidedelay: 6000; delayout: 500; transition2d: all;"}
+            %img.ls-bg{alt: "", src: "/assets/demo/slides/dynamic/bg_1.jpg"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: left; scalein: 0.2; durationout: 2000; scaleout: 0.5; durationin: 4000; durationout: 2000;", src: "/assets/demo/slides/dynamic/balloon.png", style: "left: 160px; top: 50px;"}/
+            .ls-s-1{rel: "slidedirection: fade; slideoutdirection: fade; delayin: 2000; scalein: 2; durationin: 1500;", style: "padding: 10px 20px; border-radius: 3px; background-color: #333333; font-size: 26px; font-weight: 300; white-space: nowrap; color: #ffffff; left: 620px; top: 100px;"}
+              Hi, We're Youxi...
+            .ls-s-1{rel: "delayin: 3000; slidedirection: fade; slideoutdirection: bottom;", style: "left: 620px; top: 175px; font-size: 14px; line-height: 25px; white-space: nowrap; color: #666666;"}
+              We are a collection of widgets and elements,
+              %br/
+              we are bundled and optimized to work together
+              %br/
+              as a website template making the perfect choice
+              %br/
+              for any of your blog or business websites.
+          .ls-layer{style: "slidedelay: 6000; delayout: 1200; transition2d: all;"}
+            %img.ls-bg{alt: "", src: "/assets/demo/slides/dynamic/bg_2.jpg"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: bottom; slideoutdirection: bottom; durationout: 750; durationin: 750; delayin: 750; delayout: 1000;", src: "/assets/demo/slides/dynamic/girl.png", style: "left: 382px; top: 60px;"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: right; slideoutdirection: right; durationout: 750; durationin: 750; delayout: 1000;", src: "/assets/demo/slides/dynamic/imac.png", style: "left: 687px; top: 100px;"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; durationout: 750; durationin: 750; delayin: 500; delayout: 1000;", src: "/assets/demo/slides/dynamic/iphone.png", style: "left: 697px; top: 260px;"}/
+            .ls-s-1{rel: "slidedirection: fade; slideoutdirection: left; delayin: 1500; delayout: 1000; durationin: 500; durationout: 500;", style: "padding: 10px 20px; border-radius: 3px; background-color: #ffffff; font-size: 26px; color: #181818; white-space: nowrap; left: 80px; top: 90px;"}
+              Why do we    Youxi?
+            .ls-s3.accent{rel: "slidedirection: fade; scalein: 0; delayin: 1500; delayout: 750; scaleout: 3;", style: "font-size: 18px; left: 239px; top: 108px;"}
+              %i.icon-heart
+            .ls-s-1{rel: "slidedirection: bottom; slideoutdirection: bottom; delayin: 2500; durationin: 250; durationout: 400; delayout: 800;", style: "font-size: 14px; color: #787878; left: 90px; top: 172px;"}
+              %span{style: "margin-right: 5px;"}
+                %i.icon-ok-2
+              Fully Responsive Layout
+            .ls-s-1{rel: "slidedirection: bottom; slideoutdirection: bottom; delayin: 2700; durationin: 250; durationout: 400; delayout: 600;", style: "font-size: 14px; color: #787878; left: 90px; top: 206px;"}
+              %span{style: "margin-right: 5px;"}
+                %i.icon-ok-2
+              Retina Display Ready
+            .ls-s-1{rel: "slidedirection: bottom; slideoutdirection: bottom; delayin: 2900; durationin: 250; durationout: 400; delayout: 400;", style: "font-size: 14px; color: #787878; left: 90px; top: 240px;"}
+              %span{style: "margin-right: 5px;"}
+                %i.icon-ok-2
+              Clean and Professional Design
+            .ls-s-1{rel: "slidedirection: bottom; slideoutdirection: bottom; delayin: 3100; durationin: 250; durationout: 400; delayout: 200;", style: "font-size: 14px; color: #787878; left: 90px; top: 274px;"}
+              %span{style: "margin-right: 5px;"}
+                %i.icon-ok-2
+              W3C Compliant HTML5 & CSS3
+            .ls-s-1{rel: "slidedirection: bottom; slideoutdirection: bottom; delayin: 3300; durationin: 250; durationout: 400;", style: "font-size: 14px; color: #787878; left: 90px; top: 308px;"}
+              %span{style: "margin-right: 5px;"}
+                %i.icon-ok-2
+              Premium Plugins Included
+          .ls-layer{style: "slidedelay: 6000; delayout: 1200; transition2d: all;"}
+            %img.ls-bg{alt: "", src: "/assets/demo/slides/dynamic/bg_31.jpg"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; rotateout: 180; rotatein: -360; durationout: 1500; durationin: 2000; delayin: 1500; delayout: 1000; easingin: easeOutBounce;", src: "/assets/demo/slides/dynamic/chrome.png", style: "left: 222px; top: 280px;"}/
+            .ls-s3{rel: "slidedirection: fade; scalein: 4; delayin: 4000; easingin: easeOutExpo;", style: "left: 216px; top: 385px; color: #ffffff; font-size: 13px; padding: 5px 10px;"}
+              Google Chrome
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; rotateout: 180; rotatein: 360; durationout: 1500; durationin: 2000; delayin: 2000; delayout: 1000; easingin: easeOutBounce;", src: "/assets/demo/slides/dynamic/firefox.png", style: "left: 342px; top: 280px;"}/
+            .ls-s3{rel: "slidedirection: fade; scalein: 4; delayin: 4000; easingin: easeOutExpo;", style: "left: 363px; top: 385px; color: #ffffff; font-size: 13px; padding: 5px 10px;"}
+              Firefox
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; rotateout: 180; rotatein: -360; durationout: 1500; durationin: 2000; delayin: 2500; delayout: 1000; easingin: easeOutBounce;", src: "/assets/demo/slides/dynamic/safari.png", style: "left: 462px; top: 280px;"}/
+            .ls-s3{rel: "slidedirection: fade; scalein: 4; delayin: 4000; easingin: easeOutExpo;", style: "left: 486px; top: 385px; color: #ffffff; font-size: 13px; padding: 5px 10px;"}
+              Safari
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; rotateout: 180; rotatein: 360; durationout: 1500; durationin: 2000; delayin: 2000; delayout: 1000; easingin: easeOutBounce;", src: "/assets/demo/slides/dynamic/opera.png", style: "left: 582px; top: 280px;"}/
+            .ls-s3{rel: "slidedirection: fade; scalein: 4; delayin: 4000; easingin: easeOutExpo;", style: "left: 605px; top: 385px; color: #ffffff; font-size: 13px; padding: 5px 10px;"}
+              Opera
+            %img.ls-s-1{alt: "", rel: "slidedirection: top; slideoutdirection: right; rotateout: 180; rotatein: -360; durationout: 1500; durationin: 2000; delayin: 1500; delayout: 1000; easingin: easeOutBounce;", src: "/assets/demo/slides/dynamic/ie.png", style: "left: 702px; top: 280px;"}/
+            .ls-s3{rel: "slidedirection: fade; scalein: 4; delayin: 4000; easingin: easeOutExpo;", style: "left: 730px; top: 385px; color: #ffffff; font-size: 13px; padding: 5px 10px;"}
+              IE8+
+            .ls-s-1{rel: "slidedirection: fade; slideoutdirection: left; delayout: 1000; durationin: 2000; durationout: 500;", style: "padding: 10px 20px; border-radius: 3px; background-color: #ffffff; font-weight: 300; font-size: 26px; color: #181818; white-space: nowrap; left: 50%; top: 90px;"}
+              Youxi Never Abandons Any of These!
+          .ls-layer{style: "slidedelay: 5000; delayout: 1200; transition2d: all;"}
+            %img.ls-bg{alt: "", src: "/assets/demo/slides/dynamic/bg_3.jpg"}/
+            %img.ls-s-1{alt: "", rel: "slidedirection: right; slideoutdirection: right; scalein: 0.5; rotatein: -32; rotateout: -32; durationout: 2000; durationin: 2000; easingin: easeOutQuad;", src: "/assets/demo/slides/dynamic/earth.png", style: "left: 382px; top: 60px;"}/
+            .ls-s-1{rel: "slidedirection: fade; slideoutdirection: left; rotatein: 180; delayin: 2000;", style: "padding: 10px 20px; border-radius: 3px; background-color: #3d5066; font-weight: 300; font-size: 26px; color: #ffffff; white-space: nowrap; left: 80px; top: 90px;"}
+              So what are you waiting for?
+            .ls-s-1{rel: "slidedirection: left; slideoutdirection: fade; scaleout: 4; delayin: 2800;", style: "padding: 10px 20px; border-radius: 3px; background-color: #ffffff; font-weight: 300; font-size: 20px; color: #181818; white-space: nowrap; left: 80px; top: 160px;"}
+              %a{href: "http://www.themeforest.net", style: "color: #181818;"} » Buy Now on ThemeForest!
+      .content
+        .highlight
+          .container
+            .sixteen.columns
+              .highlight-inner
+                .col-text
+                  %h2.headline
+                    %span.accent> Clean
+                    ,
+                    %span.accent Elegant
+                    and
+                    %span.accent Modern
+                    Multipurpose Template Available Only on ThemeForest
+                  %p Packed with tons of elements suitable for any personal blog or business websites.
+                .col-btn
+                  %a.btn{href: "#"} Buy Now On ThemeForest
+      =# yield
+      %footer.footer
+        .footer-top
+          .container
+            .one-third.column
+              .footer-logo
+                %img{alt: "Youxi", src: "/assets/assets/img/footer-logo.png", style: "width: 70px;"}/
+              %p Youxi is a HTML5 template suitable for any blog or business websites. It features tons of widgets and elements, all cleanly coded with the latest web standards. The template is also responsive and retina ready, making it perfect for use across devices and platforms.
+            .one-third.column
+              %h4 Our Flickr Stream
+            .one-third.column
+              %h4 Latest Tweets
+        .footer-bottom
+          .container
+            .eight.columns
+              Copyright 2013.
+              = succeed "." do
+                %a{href: "http://www.youxithemes.com"} Youxi Themes
+            .eight.columns
+              %ul.footer-nav
+                %li
+                  %a{href: "index.html"} Home
+                %li
+                  %a{href: "portfolio-3.html"} Portfolio
+                %li
+                  %a{href: "blog.html"} Blog
+                %li
+                  %a{href: "contact.html"} Contact Us
+    %script{src: "/assets/assets/js/jquery-1.10.2.min.js"}
+    %script{src: "/assets/plugins/jflickrfeed/jflickrfeed.min.js"}
+    %script{src: "/assets/plugins/tweet/jquery.tweet.min.js"}
+    %script{src: "/assets/plugins/fitvids/jquery.fitvids.min.js"}
+    %script{src: "/assets/plugins/map/gmap3.min.js"}
+    %script{src: "/assets/plugins/isotope/jquery.isotope.min.js"}
+    %script{src: "/assets/plugins/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"}
+    %script{src: "/assets/plugins/flexslider/jquery.flexslider-min.js"}
+    %script{src: "/assets/assets/js/jquery.timeline.min.js"}
+    %script{src: "/assets/plugins/magnificpopup/jquery.magnific-popup.min.js"}
+    %script{src: "/assets/plugins/layerslider/js/jquery-easing-1.3.js"}
+    %script{src: "/assets/plugins/layerslider/js/jquerytransit.js"}
+    %script{src: "/assets/plugins/layerslider/js/layerslider.transitions.js"}
+    %script{src: "/assets/plugins/layerslider/js/layerslider.kreaturamedia.jquery.min.js"}
+    %script{src: "/assets/assets/js/youxi.plugins.min.js"}
+    %script{src: "/assets/assets/js/youxi.setup.js"}
