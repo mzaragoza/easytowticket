@@ -16,7 +16,7 @@
 	height: 24px;
 	display: inline-block;
 	background-position: 24px 24px;
-	background-image: url('vsoc.png');
+	background-image: url('/assets/assets/icons/social/vsoc.png');
 	background-repeat: no-repeat;
 }
 
@@ -141,6 +141,6 @@ only screen and (                min-resolution: 2dppx)
 	[class^="icon-social-"], 
 	[class*=" icon-social-"] {
 		background-size: 240px 264px;
-		background-image: url('vsoc@2x.png');
+		background-image: url('/assets/assets/icons/social/vsoc@2x.png');
 	}
 }
