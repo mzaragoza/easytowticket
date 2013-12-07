@@ -13,7 +13,25 @@ Fabricator(:admin) do
   phone { Faker::PhoneNumber.short_phone_number }
   time_zone 'Eastern Time (US & Canada)'
   active  true
+  is_admin true
+  start_date Date.today
   after_build do |a|
     a.account ||= Account.last || Fabricate(:account)
   end
+end
+
+Fabricator(:driver, from: :admin) do
+  is_admin false
+  is_driver true
+end
+
+Fabricator(:owner, from: :admin) do
+  is_admin true
+  is_owner true
+end
+
+Fabricator(:admin_driver, from: :admin) do
+  is_admin true
+  is_owner true
+  is_driver true
 end

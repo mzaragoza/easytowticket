@@ -18,7 +18,22 @@
     .mws-form-row.bordered
       %label.mws-form-label= t(:address)
       .mws-form-item
-        = f.input :address, as: :text, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :address, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:address2)
+      .mws-form-item
+        = f.input :address2, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:city)
+      .mws-form-item
+        = f.input :city, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:state)
+      .mws-form-item
+        = f.input :state, :as => :select, :collection => us_states, :label => false
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:zip)
@@ -28,22 +43,22 @@
     .mws-form-row.bordered
       %label.mws-form-label= t(:millage_finish)
       .mws-form-item
-        = f.input :millage_finish, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :milleage_finish, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:millage_start)
       .mws-form-item
-        = f.input :millage_start, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :milleage_start, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:servie_time_finish)
       .mws-form-item
-        = f.input :servie_time_finish, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :service_time_finish, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:servie_time_start)
       .mws-form-item
-        = f.input :servie_time_start, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :service_time_start, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:extra_person_finish)

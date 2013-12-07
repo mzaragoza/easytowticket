@@ -7,6 +7,7 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   validates_uniqueness_of :email, :scope => :account_id, :case_sensitive => false
+  before_validation { |a| a.phone = phone.to_s.gsub(/[^0-9]/, "").to_s.squeeze(" ").strip }
 
   attr_accessor :updating_password
 
@@ -16,6 +17,10 @@ class Admin < ActiveRecord::Base
 
   def full_name
     (first_name + ' ' + last_name).titleize
+  end
+
+  def full_address
+    (address + ' ' + address2 + ' ' + city + ' ' +  state + ' ' + zip_code).titleize
   end
 
   def should_validate_password?

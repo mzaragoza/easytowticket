@@ -1,13 +1,14 @@
 class DeviseCreateAdmins < ActiveRecord::Migration
   def change
 
-    create_table "accounts", force: true do |t|
-      t.string   "name",            :null => false, default: ""
-      t.string   "logo",            :null => false, default: ""
-      t.string   "domain",          :null => false, default: ""
-      t.string   "subdomain",       :null => false, default: ""
-      t.string   "time_zone",       :null => false, default: "Eastern Time (US & Canada)"
-      t.boolean  "active",          :null => false, default: true
+    create_table(:accounts) do |t|
+      t.string   :name,            :null => false, default: ""
+      t.string   :logo,            :null => false, default: ""
+      t.string   :domain,          :null => false, default: ""
+      t.string   :subdomain,       :null => false, default: ""
+      t.string   :time_zone,       :null => false, default: "Eastern Time (US & Canada)"
+      t.boolean  :active,          :null => false, default: true
+      t.boolean  :show_suppprt,    :null => false, default: true
 
       t.timestamps
     end
@@ -33,8 +34,12 @@ class DeviseCreateAdmins < ActiveRecord::Migration
       t.string :phone,              :null => false, default: ""
       t.string :occupation,         :null => false, default: ""
       t.boolean :active,            default: true
+      t.boolean :is_owner,          default: false
       t.boolean :is_admin,          default: false
+      t.boolean :is_driver,         default: false
       t.boolean :newsletter,        default: true
+      t.date :start_date,           default: Date.today
+      t.date :end_date
 
       ## Recoverable
       t.string   :reset_password_token

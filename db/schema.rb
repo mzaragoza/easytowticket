@@ -17,12 +17,13 @@ ActiveRecord::Schema.define(version: 20131129222903) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.string   "name",       default: "",                           null: false
-    t.string   "logo",       default: "",                           null: false
-    t.string   "domain",     default: "",                           null: false
-    t.string   "subdomain",  default: "",                           null: false
-    t.string   "time_zone",  default: "Eastern Time (US & Canada)", null: false
-    t.boolean  "active",     default: true,                         null: false
+    t.string   "name",         default: "",                           null: false
+    t.string   "logo",         default: "",                           null: false
+    t.string   "domain",       default: "",                           null: false
+    t.string   "subdomain",    default: "",                           null: false
+    t.string   "time_zone",    default: "Eastern Time (US & Canada)", null: false
+    t.boolean  "active",       default: true,                         null: false
+    t.boolean  "show_suppprt", default: true,                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,26 +34,30 @@ ActiveRecord::Schema.define(version: 20131129222903) do
 
   create_table "admins", force: true do |t|
     t.integer  "account_id"
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "first_name",             default: "",    null: false
-    t.string   "last_name",              default: "",    null: false
-    t.string   "address",                default: "",    null: false
-    t.string   "address2",               default: "",    null: false
-    t.string   "city",                   default: "",    null: false
-    t.string   "state",                  default: "",    null: false
-    t.string   "zip_code",               default: "",    null: false
-    t.string   "country",                default: "",    null: false
-    t.string   "time_zone",              default: "",    null: false
-    t.string   "phone",                  default: "",    null: false
-    t.string   "occupation",             default: "",    null: false
+    t.string   "email",                  default: "",           null: false
+    t.string   "encrypted_password",     default: "",           null: false
+    t.string   "first_name",             default: "",           null: false
+    t.string   "last_name",              default: "",           null: false
+    t.string   "address",                default: "",           null: false
+    t.string   "address2",               default: "",           null: false
+    t.string   "city",                   default: "",           null: false
+    t.string   "state",                  default: "",           null: false
+    t.string   "zip_code",               default: "",           null: false
+    t.string   "country",                default: "",           null: false
+    t.string   "time_zone",              default: "",           null: false
+    t.string   "phone",                  default: "",           null: false
+    t.string   "occupation",             default: "",           null: false
     t.boolean  "active",                 default: true
+    t.boolean  "is_owner",               default: false
     t.boolean  "is_admin",               default: false
+    t.boolean  "is_driver",              default: false
     t.boolean  "newsletter",             default: true
+    t.date     "start_date",             default: '2013-12-07'
+    t.date     "end_date"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,            null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -61,7 +66,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,     null: false
+    t.integer  "failed_attempts",        default: 0,            null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
@@ -80,11 +85,14 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "name",                                   default: ""
     t.string   "phone",                                  default: ""
     t.string   "address",                                default: ""
+    t.string   "address2",                               default: ""
+    t.string   "city",                                   default: ""
+    t.string   "state",                                  default: ""
     t.string   "zip",                                    default: ""
-    t.integer  "millage_finish"
-    t.integer  "millage_start"
-    t.datetime "servie_time_finish"
-    t.datetime "servie_time_start"
+    t.integer  "milleage_finish"
+    t.integer  "milleage_start"
+    t.datetime "service_time_finish"
+    t.datetime "service_time_start"
     t.string   "extra_person_finish",                    default: ""
     t.string   "extra_person_start",                     default: ""
     t.string   "extra_person_total",                     default: ""
@@ -93,7 +101,6 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "car_model",                              default: ""
     t.string   "car_color",                              default: ""
     t.string   "driver",                                 default: ""
-    t.string   "state",                                  default: ""
     t.string   "license_number",                         default: ""
     t.string   "vehicle_id",                             default: ""
     t.boolean  "sling",                                  default: false, null: false

@@ -1,0 +1,51 @@
+.mws-panel.grid_8
+  .mws-panel-header
+    .pull-right
+      = link_to 'Edit', edit_admins_admin_path(admin), class: 'btn'
+    %span
+      %i.icon-book
+      Admin / Driver Summary
+  .mws-panel-body.no-padding
+    %ul.mws-summary.clearfix
+      %li
+        %span.key
+          = t(:email)
+        %span.val
+          %span.text-nowrap= mail_to admin.email
+      %li
+        %span.key
+          = t(:name)
+        %span.val
+          %span.text-nowrap= admin.name
+      %li
+        %span.key
+          = t(:address)
+        %span.val
+          %span.text-nowrap= admin.full_address
+      %li
+        %span.key
+          = t(:phone)
+        %span.val
+          %span.text-nowrap= number_to_phone(admin.phone)
+      %li
+        %span.key
+          = t(:permissions)
+        %span.val
+          %span.text-nowrap
+            - if admin.active
+              .badge.badge-info= t(:active)
+            - if admin.is_admin
+              .badge.badge-info= t(:admin)
+            - if admin.is_driver
+              .badge.badge-info= t(:driver)
+      %li
+        %span.key
+          = t(:employment_dates)
+        %span.val
+          %span.text-nowrap
+            = admin.start_date
+            till 
+            - if admin.end_date.to_s.empty?
+              Present
+            - else
+              = admin.end_date

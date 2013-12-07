@@ -1,0 +1,72 @@
+= simple_form_for([:admins, admin], :html => {:class => 'mws-form' }) do |f|
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:email)
+      .mws-form-item
+        = f.input :email, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:password)
+      .mws-form-item
+        = f.input :password, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:first_name)
+      .mws-form-item
+        = f.input :first_name, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:last_name)
+      .mws-form-item
+        = f.input :last_name, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:address)
+      .mws-form-item
+        = f.input :address, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:address2)
+      .mws-form-item
+        = f.input :address2, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:city)
+      .mws-form-item
+        = f.input :city, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:state)
+      .mws-form-item
+        = f.input :state, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:zip_code)
+      .mws-form-item
+        = f.input :zip_code, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:phone)
+      .mws-form-item
+        = f.input :phone, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:permissions)
+      .mws-form-item
+        = f.input :active
+        = f.input :is_admin
+        = f.input :is_driver
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:start_date)
+      .mws-form-item
+        = f.input :start_date,as: :date_picker, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:end_date)
+      .mws-form-item
+        = f.input :end_date,as: :date_picker, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-button-row
+    = f.button :submit, :class => 'btn btn-info'
+    %input.btn{type: "reset", value: "Reset"}/
+

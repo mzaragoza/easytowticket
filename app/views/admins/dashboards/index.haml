@@ -1,4 +1,7 @@
-%h1 Coming Soon
-
-%H2 What should go on the Dash. 
+-if current_admin.is_admin
+  %h1 Admin Dash
+  = render 'admin'
+-if current_admin.is_driver
+  %h1 Driver Dash
+  = render 'driver'
 

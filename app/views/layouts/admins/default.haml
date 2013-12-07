@@ -10,7 +10,7 @@
     / Viewport Metatag
     %meta{content: "width=device-width,initial-scale=1.0", name: "viewport"}/
     = stylesheet_link_tag "admins/default", media: "all", "data-turbolinks-track" => true
-    %title Site Name
+    %title= current_account.name
   = csrf_meta_tags
   %body
     #mws-header.clearfix
@@ -53,6 +53,11 @@
               = link_to admins_dashboard_path do
                 %i.icon-home
                 Dashboard
+            -if current_admin.is_admin
+              %li
+                = link_to admins_admins_path do
+                  %i.icon-graph
+                  Admins
             %li
               = link_to admins_tickets_path do
                 %i.icon-graph

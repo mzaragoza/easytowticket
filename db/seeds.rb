@@ -1,3 +1,3 @@
   Fabricate(:account )
-  Fabricate(:admin, email: 'admin@test.com' )
+  Fabricate(:admin_driver, email: 'admin@test.com' )
 

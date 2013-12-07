@@ -7,11 +7,14 @@ class CreateTickets < ActiveRecord::Migration
       t.string   :name,                                       default: ''
       t.string   :phone,                                      default: ''
       t.string   :address,                                    default: ''
+      t.string   :address2,                                   default: ''
+      t.string   :city,                                       default: ''
+      t.string   :state,                                      default: ''
       t.string   :zip,                                        default: ''
-      t.integer  :millage_finish
-      t.integer  :millage_start
-      t.datetime :servie_time_finish
-      t.datetime :servie_time_start
+      t.integer  :milleage_finish
+      t.integer  :milleage_start
+      t.datetime :service_time_finish
+      t.datetime :service_time_start
       t.string   :extra_person_finish,                        default: ''
       t.string   :extra_person_start,                         default: ''
       t.string   :extra_person_total,                         default: ''
