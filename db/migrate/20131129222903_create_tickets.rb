@@ -35,7 +35,7 @@ class CreateTickets < ActiveRecord::Migration
       t.boolean  :flat_tire,                                  :null => false, default: false
       t.boolean  :out_of_gas,                                 :null => false, default: false
       t.boolean  :wreck,                                      :null => false, default: false
-      t.boolean  :recoverty,                                  :null => false, default: false
+      t.boolean  :recovery,                                   :null => false, default: false
       t.string   :other,                                      default: ''
       t.boolean  :special_equipment_single_line_winching,     :null => false, default: false
       t.boolean  :special_equipment_dual_line_winching,       :null => false, default: false
