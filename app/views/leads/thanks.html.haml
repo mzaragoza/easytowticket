@@ -1,0 +1,43 @@
+- content_for :pagetitle do 
+  Thank You
+/ Content
+.content
+  / Page Header
+  .page-header
+    .container
+      .sixteen.columns
+        %h1.page-title
+          Thank You
+          %span Your information has been received.
+        %ul.breadcrumb
+          %li
+            =link_to t(:home), root_path
+            %span.divider »
+          %li
+            =link_to t(:contact_us), contact_us_path
+            %span.divider »
+          %li.active Thank You
+  / Start Content
+  .container.main
+    / Icons
+    .columns.sixteen
+      %h4.headline= t(:thank_you)
+    .columns.sixteen
+      %h3 Your information has been received.
+      %br
+    .seven.columns
+      .team-contact-info
+        %strong Plans & Pricing Information
+        %br
+        For information on our service offerings and pricing, please use the link to the right to checkout our plans and pricing. 
+        %br
+        %br
+        =link_to t(:plans_and_pricing), prices_path(:plan => 'free'), :class => 'btn'
+    .seven.columns
+      %strong Sign up in 60 Seconds!
+      %br
+      Use our secure, online tool to sign up and get started with our service! you'll get your toll free number .
+      %br
+      %br
+      =link_to t(:sign_up_in_60_seconds!), new_user_registration_path(:plan => 'free'), :class => 'btn'
+

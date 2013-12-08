@@ -15,9 +15,8 @@ class CreateTickets < ActiveRecord::Migration
       t.integer  :milleage_start
       t.datetime :service_time_finish
       t.datetime :service_time_start
-      t.string   :extra_person_finish,                        default: ''
-      t.string   :extra_person_start,                         default: ''
-      t.string   :extra_person_total,                         default: ''
+      t.datetime :extra_truck_finish
+      t.datetime :extra_truck_start
       t.string   :car_year,                                   default: ''
       t.string   :car_make,                                   default: ''
       t.string   :car_model,                                  default: ''

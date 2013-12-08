@@ -16,11 +16,9 @@
           %th= t(:name)
           %th= t(:phone)
           %th= t(:address)
-          %th= t(:millage)
+          %th= t(:milleage)
           %th= t(:servie)
-          %th= t(:extra_person_finish)
-          %th= t(:extra_person_start)
-          %th= t(:extra_person_total)
+          %th= t(:extra)
           %th= t(:car_year)
           %th= t(:car_make)
           %th= t(:car_model)
@@ -42,11 +40,9 @@
             %td= t.name
             %td= number_to_phone(t.phone)
             %td= t.address
-            %td= t.millage
-            %td= t.servie
-            %td= t.extra_person_finish
-            %td= t.extra_person_start
-            %td= t.extra_person_total
+            %td= t.milleage
+            %td= t.service
+            %td= t.extra
             %td= t.car_year
             %td= t.car_make
             %td= t.car_model
@@ -57,38 +53,38 @@
             %td= t.vehicle_id
             %td
               - if t.sling
-                .badge.badge-info= 'Sling'
+                .badge.badge-info= t(:sling)
               - if t.hoist_tow
-                .badge.badge-info= 'Hoist Tow'
+                .badge.badge-info= t(:hoist_tow)
               - if t.wheel_lift
-                .badge.badge-info= 'Wheel Lift'
+                .badge.badge-info= t(:wheel_lift)
               - if t.flad_bed
-                .badge.badge-info= 'Flad Bed'
+                .badge.badge-info= t(:flad_bed)
               - if t.start
-                .badge.badge-info= 'Start'
+                .badge.badge-info= t(:start)
               - if t.lock_out
-                .badge.badge-info= 'Lock Out'
+                .badge.badge-info= t(:lock_out)
               - if t.flat_tire
-                .badge.badge-info= 'Flat Tire'
+                .badge.badge-info= t(:flat_tire)
               - if t.out_of_gas
-                .badge.badge-info= 'Out Of Gas'
+                .badge.badge-info= t(:out_of_gas)
               - if t.wreck
-                .badge.badge-info= 'Wreck'
-              - if t.recoverty
-                .badge.badge-info= 'Recoverty'
+                .badge.badge-info= t(:wreck)
+              - if t.recovery
+                .badge.badge-info= t(:recovery)
               - unless t.other.empty?
                 .badge.badge-info= 'Other ' + t.other
             %td
               - if t.special_equipment_single_line_winching?
-                .badge.badge-info= 'Single Line Winching'
+                .badge.badge-info= 'single line winching'
               - if t.special_equipment_dual_line_winching
-                .badge.badge-info= 'Fual Line Winching'
+                .badge.badge-info= 'fual line winching'
               - if t.special_equipment_snatch_blocks
-                .badge.badge-info= 'Snatch Blocks'
+                .badge.badge-info= 'snatch blocks'
               - if t.special_equipment_scotch_blocks
-                .badge.badge-info= 'Scotch Blocks'
+                .badge.badge-info= 'scotch blocks'
               - if t.special_equipment_dolly
-                .badge.badge-info= 'Dolly'
+                .badge.badge-info= 'dolly'
               - unless t.special_equipment_other.empty?
-                .badge.badge-info= 'Other ' + t.special_equipment_other
+                .badge.badge-info= 'other ' + t.special_equipment_other
             %td= t.updated_at.in_time_zone(current_account.time_zone).strftime('%D %r')

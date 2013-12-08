@@ -1,0 +1,75 @@
+- content_for :pagetitle do 
+  Contact Us
+/ Content
+.content
+  / Page Header
+  .page-header
+    .container
+      .sixteen.columns
+        %h1.page-title
+          Contact Us
+          %span How can we help you
+        %ul.breadcrumb
+          %li
+            =link_to t(:home), root_path
+            %span.divider »
+          %li.active Contact Us
+  / Start Content
+  .container.main
+    .sixteen.columns
+      .row
+        =# simple_form_for(lead, :url => '', :method => 'post',  :html => {:class => 'form-horizontal' }) do |f|
+        = simple_form_for(lead, :url => leads_path, :method => 'post',  :html => {:class => 'form-horizontal' }) do |f|
+          - if lead.errors.count > 0
+            #contact-message.alert.alert-info
+              %ul.list-style
+                - lead.errors.full_messages.each do |e|
+                  %li.arrow-list=e
+          .form-row
+            %label.mws-form-label= t(:first_name)
+            .form-item
+            = f.input :first_name, :label => false
+          .form-row
+            %label.mws-form-label= t(:last_name)
+            .form-item
+            = f.input :last_name, :label => false
+          .form-row
+            %label.mws-form-label= t(:email)
+            .form-item
+            = f.input :email, :label => false
+          .form-row
+            %label.mws-form-label= t(:message)
+            .form-item
+            = f.input :message, :label => false
+          .form-row
+            %label.mws-form-label= t(:phone)
+            .form-item
+            = f.input :phone, :label => false
+          .form-row
+            %label.mws-form-label= t(:address)
+            .form-item
+            = f.input :address, :label => false
+          .form-row
+            %label.mws-form-label= t(:address2)
+            .form-item
+            = f.input :address2, :label => false
+          .form-row
+            %label.mws-form-label= t(:city)
+            .form-item
+            = f.input :city, :label => false
+          .form-row
+            %label.mws-form-label= t(:state)
+            .form-item
+            = f.input :state, :as => :select, :collection => us_states, :label => false
+          .form-row
+            %label.mws-form-label= t(:zip)
+            .form-item
+            = f.input :zip, :label => false
+          .form-row
+            %label.mws-form-label= t(:newsletter)
+            .form-item
+            = f.input :newsletter, as: :radio_buttons, :label => false
+          .button-row
+            = f.button :submit, :class => 'pull-right btn', :value => "Submit"
+
+

@@ -39,49 +39,49 @@
           %span.text-nowrap= ticket.zip
       %li
         %span.key
-          = t(:millage_finish)
+          = t(:milleage_finish)
         %span.val
-          %span.text-nowrap= ticket.millage_finish
+          %span.text-nowrap= ticket.milleage_finish
       %li
         %span.key
-          = t(:millage_start)
+          = t(:milleage_start)
         %span.val
-          %span.text-nowrap= ticket.millage_start
+          %span.text-nowrap= ticket.milleage_start
       %li
         %span.key
-          = t(:millage)
+          = t(:milleage)
         %span.val
-          %span.text-nowrap= ticket.millage
+          %span.text-nowrap= ticket.milleage
       %li
         %span.key
-          = t(:servie_time_finish)
+          = t(:service_time_finish)
         %span.val
-          %span.text-nowrap= ticket.servie_time_finish
+          %span.text-nowrap= ticket.service_time_finish.in_time_zone(current_account.time_zone).strftime('%D %r')
       %li
         %span.key
-          = t(:servie_time_start)
+          = t(:service_time_start)
         %span.val
-          %span.text-nowrap= ticket.servie_time_start
+          %span.text-nowrap= ticket.service_time_start.in_time_zone(current_account.time_zone).strftime('%D %r')
       %li
         %span.key
-          = t(:servie_time)
+          = t(:service_time)
         %span.val
-          %span.text-nowrap= ticket.servie
+          %span.text-nowrap= ticket.service
       %li
         %span.key
-          = t(:extra_person_finish)
+          = t(:extra_truck_finish)
         %span.val
-          %span.text-nowrap= ticket.extra_person_finish
+          %span.text-nowrap= ticket.extra_truck_finish.in_time_zone(current_account.time_zone).strftime('%D %r')
       %li
         %span.key
-          = t(:extra_person_start)
+          = t(:extra_truck_start)
         %span.val
-          %span.text-nowrap= ticket.extra_person_start
+          %span.text-nowrap= ticket.extra_truck_start.in_time_zone(current_account.time_zone).strftime('%D %r')
       %li
         %span.key
-          = t(:extra_person_total)
+          = t(:extra_truck_total)
         %span.val
-          %span.text-nowrap= ticket.extra_person_total
+          %span.text-nowrap= ticket.extra
       %li
         %span.key
           = t(:car_year)
@@ -145,8 +145,8 @@
               .badge.badge-info= t(:out_of_gas)
             - if ticket.wreck
               .badge.badge-info= t(:wreck)
-            - if ticket.recoverty
-              .badge.badge-info= t(:recoverty)
+            - if ticket.recovery
+              .badge.badge-info= t(:recovery)
             - unless ticket.other.empty?
               .badge.badge-info= t(:other) + ' ' + ticket.other
       %li
