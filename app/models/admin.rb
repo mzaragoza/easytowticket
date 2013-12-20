@@ -3,6 +3,7 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :account
   has_many :tickets, :foreign_key => "created_by_id"
+  has_many :driver_tickets, :foreign_key => "driver_id", :class_name => "Ticket"
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 

@@ -3,6 +3,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration
 
     create_table(:accounts) do |t|
       t.string   :name,            :null => false, default: ""
+      t.string   :ticket_prefix,   :null => false, default: ""
       t.string   :logo,            :null => false, default: ""
       t.string   :domain,          :null => false, default: ""
       t.string   :subdomain,       :null => false, default: ""

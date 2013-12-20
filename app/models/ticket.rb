@@ -1,7 +1,9 @@
 class Ticket < ActiveRecord::Base
   belongs_to :account
   belongs_to :created_by, :class_name => "Admin"
+  belongs_to :driver, :class_name => "Admin"
 
+  before_create :set_identification
   before_validation { |t| t.phone = phone.to_s.gsub(/[^0-9]/, "").to_s.squeeze(" ").strip }
 
   def milleage
@@ -32,6 +34,11 @@ class Ticket < ActiveRecord::Base
     elsif extra_truck_start
       extra_truck_start
     end
+  end
+
+  private
+  def set_identification
+    self.identification = self.account.ticket_prefix + (self.account.tickets.count + 100000000).to_s
   end
 end
 

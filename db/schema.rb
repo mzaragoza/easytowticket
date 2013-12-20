@@ -17,13 +17,14 @@ ActiveRecord::Schema.define(version: 20131129222903) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
-    t.string   "name",         default: "",                           null: false
-    t.string   "logo",         default: "",                           null: false
-    t.string   "domain",       default: "",                           null: false
-    t.string   "subdomain",    default: "",                           null: false
-    t.string   "time_zone",    default: "Eastern Time (US & Canada)", null: false
-    t.boolean  "active",       default: true,                         null: false
-    t.boolean  "show_suppprt", default: true,                         null: false
+    t.string   "name",          default: "",                           null: false
+    t.string   "ticket_prefix", default: "",                           null: false
+    t.string   "logo",          default: "",                           null: false
+    t.string   "domain",        default: "",                           null: false
+    t.string   "subdomain",     default: "",                           null: false
+    t.string   "time_zone",     default: "Eastern Time (US & Canada)", null: false
+    t.boolean  "active",        default: true,                         null: false
+    t.boolean  "show_suppprt",  default: true,                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,7 +53,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.boolean  "is_admin",               default: false
     t.boolean  "is_driver",              default: false
     t.boolean  "newsletter",             default: true
-    t.date     "start_date",             default: '2013-12-07'
+    t.date     "start_date",             default: '2013-12-20'
     t.date     "end_date"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -98,8 +99,10 @@ ActiveRecord::Schema.define(version: 20131129222903) do
   end
 
   create_table "tickets", force: true do |t|
+    t.string   "identification",                         default: ""
     t.integer  "account_id"
     t.integer  "created_by_id"
+    t.integer  "driver_id"
     t.string   "location_of_viecle",                     default: ""
     t.string   "name",                                   default: ""
     t.string   "phone",                                  default: ""

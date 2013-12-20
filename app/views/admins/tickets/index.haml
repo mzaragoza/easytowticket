@@ -10,7 +10,9 @@
       %thead
         %tr
           %th
+          %th= t(:id)
           %th= t(:created_by)
+          %th= t(:driver)
           %th= t(:created_at)
           %th= t(:location_of_viecle)
           %th= t(:name)
@@ -34,7 +36,9 @@
         - tickets.each do |t|
           %tr
             %td= link_to 'Show', admins_ticket_path(t), class: 'btn'
+            %td= t.identification
             %td= t.created_by.name if t.created_by_id
+            %td= t.driver.name if t.driver_id
             %td= t.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
             %td= t.location_of_viecle
             %td= t.name

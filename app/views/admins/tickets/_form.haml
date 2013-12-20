@@ -1,6 +1,11 @@
 = simple_form_for([:admins, ticket], :html => {:class => 'mws-form' }) do |f|
   .mws-form-inline
     .mws-form-row.bordered
+      %label.mws-form-label= t(:driver)
+      .mws-form-item
+        = f.input :driver_id, :as => :select, :collection => current_account.admins.where(:is_driver => true), :label => false, include_blank: false
+  .mws-form-inline
+    .mws-form-row.bordered
       %label.mws-form-label= t(:location_of_viecle)
       .mws-form-item
         = f.input :location_of_viecle, as: :text, :label => false, input_html: { class: 'required small', size: '' }
@@ -77,6 +82,11 @@
   .mws-form-inline
     .mws-form-row.bordered
       %label.mws-form-label= t(:car_make)
+      .mws-form-item
+        = f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
+  .mws-form-inline
+    .mws-form-row.bordered
+      %label.mws-form-label= t(:car_model)
       .mws-form-item
         = f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
   .mws-form-inline

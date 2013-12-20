@@ -1,8 +1,10 @@
 class CreateTickets < ActiveRecord::Migration
   def change
     create_table :tickets do |t|
+      t.string   :identification,                             default: ''
       t.integer  :account_id
       t.integer  :created_by_id
+      t.integer  :driver_id
       t.string   :location_of_viecle,                         default: ''
       t.string   :name,                                       default: ''
       t.string   :phone,                                      default: ''

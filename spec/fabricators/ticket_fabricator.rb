@@ -4,13 +4,12 @@ Fabricator(:ticket) do
   phone                                    { Faker::PhoneNumber.short_phone_number  }
   address                                  {  Faker::AddressUS.street_address + ' ' + Faker::AddressUS.secondary_address + ' ' + Faker::AddressUS.secondary_address + ' ' + Faker::AddressUS.state_abbr + ' ' + Faker::AddressUS.zip_code }
   zip                                      { Faker::AddressUS.zip_code }
-  millage_finish                           { rand(1000000)  }
-  millage_start                            { rand(1000000)  }
-  servie_time_finish                       { Time.new + 1.hour }
-  servie_time_start                        { Time.new }
-  extra_person_finish                      {  }
-  extra_person_start                       {  }
-  extra_person_total                       {  }
+  milleage_finish                          { rand(1000000)  }
+  milleage_start                           { rand(1000000)  }
+  service_time_finish                      { Time.new + 1.hour }
+  service_time_start                       { Time.new }
+  extra_truck_finish                      {  }
+  extra_truck_start                       {  }
   car_year                                 { Date.today.year - rand(40) }
   car_make                                 { Faker::Lorem.words(2).join(' ') }
   car_model                                { Faker::Lorem.words(2).join(' ') }
@@ -28,7 +27,7 @@ Fabricator(:ticket) do
   flat_tire                                { [true, false].sample }
   out_of_gas                               { [true, false].sample }
   wreck                                    { [true, false].sample }
-  recoverty                                { [true, false].sample }
+  recovery                                 { [true, false].sample }
   other                                    { Faker::Lorem.words(2).join(' ') }
   special_equipment_single_line_winching   { [true, false].sample}
   special_equipment_dual_line_winching     { [true, false].sample}
