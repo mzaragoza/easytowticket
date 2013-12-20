@@ -19,24 +19,24 @@ class DeviseCreateAdmins < ActiveRecord::Migration
     add_index "accounts", ["subdomain"], name: "index_accounts_on_subdomain", unique: true, using: :btree
 
 
-    create_table(:leads) do |t|
-      t.string   :first_name,      :default => "",    :null => false
-      t.string   :last_name,       :default => "",    :null => false
-      t.string   :email,           :default => "",    :null => false
-      t.string   :message,         :default => "",    :null => false
-      t.string   :phone,           :default => "",    :null => false
-      t.string   :address,         :default => "",    :null => false
-      t.string   :address2,        :default => "",    :null => false
-      t.string   :city,            :default => "",    :null => false
-      t.string   :state,           :default => "",    :null => false
-      t.string   :zip,             :default => "",    :null => false
-      t.string   :status,          :default => "",    :null => false
-      t.string   :remoteip,        :default => "",    :null => false
-      t.boolean  :newsletter,      :default => false
-      t.string   :conversion_date, :default => ""
-
-      t.timestamps
-    end
+#   create_table(:leads) do |t|
+#     t.string   :first_name,      :default => "",    :null => false
+#     t.string   :last_name,       :default => "",    :null => false
+#     t.string   :email,           :default => "",    :null => false
+#     t.string   :message,         :default => "",    :null => false
+#     t.string   :phone,           :default => "",    :null => false
+#     t.string   :address,         :default => "",    :null => false
+#     t.string   :address2,        :default => "",    :null => false
+#     t.string   :city,            :default => "",    :null => false
+#     t.string   :state,           :default => "",    :null => false
+#     t.string   :zip,             :default => "",    :null => false
+#     t.string   :status,          :default => "",    :null => false
+#     t.string   :remoteip,        :default => "",    :null => false
+#     t.boolean  :newsletter,      :default => false
+#     t.string   :conversion_date, :default => ""
+#
+#     t.timestamps
+#   end
 
     create_table(:admins) do |t|
       ## Database authenticatable
