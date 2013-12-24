@@ -14,7 +14,6 @@ Fabricator(:ticket) do
   car_make                                 { Faker::Lorem.words(2).join(' ') }
   car_model                                { Faker::Lorem.words(2).join(' ') }
   car_color                                { Faker::Lorem.words(2).join(' ') }
-  driver                                   { Faker::Name.first_name + ' ' + Faker::Name.last_name }
   state                                    { Faker::AddressUS.state_abbr }
   license_number                           { ['SSSS-FFF-YY-DDD-N', 'F25592150094', 'SSSS-FFF-YY-DDD-N', 'F255-921-50-094-0'].sample }
   vehicle_id                               { ['VIN2HNYD284X7H536884', 'VIN19UUA8F58CA017192', 'VINJH4CU26619C029283', 'VIN19UUA66227A026955'].sample }
@@ -38,8 +37,9 @@ Fabricator(:ticket) do
   operators_comments                       { Faker::Lorem.words(20).join(' ') }
   status                                   { ['inshop'].sample }
   after_build do |t|
-    t.account ||= Account.last || Fabricate(:account)
+    t.account    ||= Account.last || Fabricate(:account)
     t.created_by ||= t.account.admins.last || Fabricate(:admin, :account_id => t.account)
+    t.driver     ||= t.account.admins.where(:is_driver => true).last || Fabricate(:admin, :account_id => t.account, :is_driver => true)
   end
 end
 
