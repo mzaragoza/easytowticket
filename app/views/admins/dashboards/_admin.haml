@@ -1,1 +1,26 @@
 This is the ADMIN dash
+.mws-panel.grid_8
+  .mws-panel-header
+    %span
+      %i.icon-table
+      Drivers
+  .mws-panel-body.no-padding
+    %table.mws-datatable-fn.mws-table
+      %thead
+        %tr
+          %th
+          %th= t(:email)
+          %th= t(:name)
+          %th= t(:phone)
+          %th= t(:tickets)
+          %th= t(:last_tickets)
+      %tbody
+        - admins.each do |a|
+          %tr
+            %td= link_to 'Show', admins_admin_path(a), class: 'btn'
+            %td= mail_to a.email
+            %td= a.name
+            %td= number_to_phone(a.phone)
+            %td= a.tickets.count
+            %td
+              = a.tickets.last.address if a.tickets.count > 0
