@@ -56,12 +56,12 @@
         %span.key
           = t(:service_time_finish)
         %span.val
-          %span.text-nowrap= ticket.service_time_finish.in_time_zone(current_account.time_zone).strftime('%D %r')
+          %span.text-nowrap= ticket.service_time_finish.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.service_time_finish
       %li
         %span.key
           = t(:service_time_start)
         %span.val
-          %span.text-nowrap= ticket.service_time_start.in_time_zone(current_account.time_zone).strftime('%D %r')
+          %span.text-nowrap= ticket.service_time_start.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.service_time_start
       %li
         %span.key
           = t(:service_time)
@@ -71,12 +71,12 @@
         %span.key
           = t(:extra_truck_finish)
         %span.val
-          %span.text-nowrap= ticket.extra_truck_finish.in_time_zone(current_account.time_zone).strftime('%D %r')
+          %span.text-nowrap= ticket.extra_truck_finish.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.extra_truck_finish
       %li
         %span.key
           = t(:extra_truck_start)
         %span.val
-          %span.text-nowrap= ticket.extra_truck_start.in_time_zone(current_account.time_zone).strftime('%D %r')
+          %span.text-nowrap= ticket.extra_truck_start.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.extra_truck_start
       %li
         %span.key
           = t(:extra_truck_total)
