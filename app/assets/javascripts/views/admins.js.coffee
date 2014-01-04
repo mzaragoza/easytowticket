@@ -1,1 +1,0 @@
-AnsweringServiceCare.Views.Admins ||= {}

@@ -1,6 +1,0 @@
-- if @zipCodes.length > 1
-  %select.zip-code-lookup-city{id: 'message_city', name: 'message[city]'}
-    - for zipCode in @zipCodes
-      %option{value: zipCode.city_st_name}= zipCode.city_st_name
-- else
-  %input.zip-code-lookup-city{type: 'text', id: 'message_city', name: 'message[city]', value: @zipCodes[0].city_st_name}

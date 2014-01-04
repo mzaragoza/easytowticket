@@ -1,9 +1,0 @@
-.input-append
-  %input.field-option.span7{type: 'text', placeholder:'Type in option name', value: @name}
-  %button.btn.add-trigger Add Trigger
-
-.sections-to-trigger
-  - for section in @sectionsToTrigger
-    %label
-      %input{type: 'checkbox', value: section, checked: _.contains(@sections, section), class: 'checkbox-trigger'}
-      = section

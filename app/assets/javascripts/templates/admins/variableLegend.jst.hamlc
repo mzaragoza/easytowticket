@@ -1,9 +1,0 @@
-%dl
-  %dt {AGENT_NAME}
-  %dd The current agent's name
-  %dt {GREETING}
-  %dd This will say 'Good morning/afternoon/evening' depending on the time zone of the account owner
-  %dt {CALLER_NAME}
-  %dd This will change to the caller's first name as soon as the agent types in the first name
-  %dt {COMPANY_NAME}
-  %dd This is the account's company name

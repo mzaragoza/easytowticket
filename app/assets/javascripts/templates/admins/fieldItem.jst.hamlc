@@ -1,3 +1,0 @@
-%button.close.icon-minus.close-field{"aria-hidden" => "true", type: "button", title: 'Remove this field item'}
-
-!= (JST['templates/admins/_fieldItemWithControls'])(disabled: @disabled, required: @required, label: @label, type: @type, options: @options)
