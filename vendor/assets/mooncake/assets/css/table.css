@@ -219,11 +219,19 @@ color:#999;
 margin:0;
 }
 
-.dataTables_scrollHead table thead tr:last-child th:first-child,.dataTables_scrollHead table thead tr:last-child td:first-child,.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
-border-bottom-left-radius:0!important;
-border-bottom-right-radius:0!important;
+.dataTables_scrollHead table thead tr:last-child {
+  th:first-child, td:first-child {
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+  }
 }
 
+.DTFC_LeftHeadWrapper table thead tr:last-child {
+  th:first-child, td:first-child {
+    border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+  }
+}
 .dataTables_scrollBody table,.DTFC_LeftBodyWrapper table {
 border-top:none;
 margin-bottom:0!important;
