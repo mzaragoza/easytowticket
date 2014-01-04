@@ -302,8 +302,10 @@ display:block;
 text-align:left;
 }
 
-.table-flipscroll th:first-child,.table td: first-child {
-border-top:none!important;
+.table-flipscroll {
+  th:first-child, .table td:first-child {
+    border-top: none!important;
+  }
 }
 
 .table-flipscroll th:last-child {
