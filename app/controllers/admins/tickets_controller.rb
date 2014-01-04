@@ -1,5 +1,11 @@
 class Admins::TicketsController < AdminController
-  expose(:tickets){ current_account.tickets.order("id DESC").scoped{} }
+  expose(:tickets){
+    if current_admin.is_admin
+      current_account.tickets.order("id DESC").scoped{}
+    else
+      current_admin.driver_tickets.order("id DESC").scoped{}
+    end
+  }
   expose(:ticket, attributes: :ticket_params)
 
   def create
