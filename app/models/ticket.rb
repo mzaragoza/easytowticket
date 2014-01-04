@@ -1,6 +1,7 @@
 class Ticket < ActiveRecord::Base
   belongs_to :account
   belongs_to :created_by, :class_name => "Admin"
+  belongs_to :requested_by, :class_name => "Admin"
   belongs_to :driver, :class_name => "Admin"
 
   before_create :set_identification

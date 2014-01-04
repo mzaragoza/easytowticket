@@ -102,7 +102,9 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "identification",                         default: ""
     t.integer  "account_id"
     t.integer  "created_by_id"
+    t.integer  "requested_by_id"
     t.integer  "driver_id"
+    t.integer  "truck_id"
     t.string   "location_of_viecle",                     default: ""
     t.string   "name",                                   default: ""
     t.string   "phone",                                  default: ""
@@ -111,6 +113,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "city",                                   default: ""
     t.string   "state",                                  default: ""
     t.string   "zip",                                    default: ""
+    t.string   "license_number",                         default: ""
     t.integer  "milleage_finish"
     t.integer  "milleage_start"
     t.datetime "service_time_finish"
@@ -121,9 +124,17 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "car_make",                               default: ""
     t.string   "car_model",                              default: ""
     t.string   "car_color",                              default: ""
-    t.string   "car_tag",                                default: ""
-    t.string   "license_number",                         default: ""
-    t.string   "vehicle_id",                             default: ""
+    t.string   "vin_number",                             default: ""
+    t.string   "tag_number",                             default: ""
+    t.string   "tow_destination",                        default: ""
+    t.string   "operators_comments",                     default: ""
+    t.string   "status",                                 default: ""
+    t.decimal  "milleage_charge"
+    t.decimal  "towing_charge"
+    t.decimal  "labor_charge"
+    t.decimal  "storage_charge"
+    t.decimal  "administration_fee"
+    t.decimal  "tax"
     t.boolean  "sling",                                  default: false, null: false
     t.boolean  "hoist_tow",                              default: false, null: false
     t.boolean  "wheel_lift",                             default: false, null: false
@@ -141,8 +152,6 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.boolean  "special_equipment_scotch_blocks",        default: false, null: false
     t.boolean  "special_equipment_dolly",                default: false, null: false
     t.string   "special_equipment_other",                default: ""
-    t.string   "operators_comments",                     default: ""
-    t.string   "status",                                 default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
