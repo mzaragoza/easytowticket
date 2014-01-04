@@ -23,6 +23,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string   :car_make,                                   default: ''
       t.string   :car_model,                                  default: ''
       t.string   :car_color,                                  default: ''
+      t.string   :car_tag,                                    default: ''
       t.string   :state,                                      default: ''
       t.string   :license_number,                             default: ''
       t.string   :vehicle_id,                                 default: ''
