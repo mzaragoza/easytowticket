@@ -1,2 +1,132 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    / Bootstrap Stylesheet
+    %link{href: "/assets/bootstrap/css/bootstrap.min.css", media: "all", rel: "stylesheet"}/
+    / jquery-ui Stylesheets
+    %link{href: "/assets/assets/jui/css/jquery-ui.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/jui/jquery-ui.custom.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/jui/timepicker/jquery-ui-timepicker.css", media: "screen", rel: "stylesheet"}/
+    / Uniform Stylesheet
+    %link{href: "/assets/plugins/uniform/css/uniform.default.css", media: "screen", rel: "stylesheet"}/
+    / Plugin Stylsheets first to ease overrides
+    / End Plugin Stylesheets
+    / Main Layout Stylesheet
+    %link{href: "/assets/assets/css/fonts/icomoon/style.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/main-style.css", media: "screen", rel: "stylesheet"}/
+    / Le HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %title MoonCake :: Responsive Admin Template - Data Tables
+  %body{"data-fixed-sidebar" => "false", "data-show-sidebar-toggle-button" => "false"}
+    #wrapper
+      %header#header.navbar.navbar-inverse
+        .navbar-inner
+          .container
+            .brand-wrap.pull-left
+              .brand-img
+                %a.brand{href: "#"}
+                  %img{alt: "", src: "/assets/logo.png", style: "width: 221px; height: 30px;"}/
+            #header-right.clearfix
+              #header-functions.pull-right
+                #user-info.clearfix
+                  %span.info
+                    Welcome
+                    %span.name= current_admin.name
+                  .avatar
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                      %img{alt: "Avatar", src: "/assets/assets/images/pp.jpg"}/
+                    %ul.dropdown-menu.pull-right
+                      %li
+                        = link_to edit_admins_profile_path(current_admin) do
+                          %i.icol-user
+                          My Profile
+                      %li.divider
+                      %li
+                        = link_to destroy_admin_session_path, :method => :delete do
+                          %i.icol-key
+                          Logout
+                #logout-ribbon
+                  = link_to destroy_admin_session_path, :method => :delete do
+                    %i.icon-off
+      #content-wrap
+        #content.sidebar-minimized
+          #content-outer
+            #content-inner
+              %aside#sidebar
+                %nav#navigation.collapse
+                  %ul
+                    %li.active
+                      = link_to admins_dashboard_path do
+                        %span{title: "General"}
+                          %i.icon-home
+                          %span.nav-title Dashboard
+                    %li
+                      = link_to admins_admins_path do
+                        %span{title: "General"}
+                          %i.icon-home
+                          %span.nav-title Admins
+                    %li
+                      = link_to admins_tickets_path do
+                        %span{title: "General"}
+                          %i.icon-home
+                          %span.nav-title Tickets
+              #sidebar-separator
+              %section#main.clearfix
+                -#main-header.page-header
+                  %ul.breadcrumb
+                    %li
+                      %i.icon-home>
+                      MoonCake
+                      %span.divider »
+                    %li
+                      %a{href: "#"} Table
+                      %span.divider »
+                    %li
+                      %a{href: "#"} Data Tables
+                  %h1#main-heading
+                    DataTables Integration
+                    %span This page shows usage examples of the popular DataTables plugin
+                #main-content
+                  .row-fluid
+                    = yield
+      %footer#footer
+        .footer-left Easy Tow Ticket
+        .footer-right
+          %p Copyright 2012. All Rights Reserved.
+    / Core Scripts
+    %script{src: "/assets/assets/js/libs/jquery-1.8.3.min.js"}
+    %script{src: "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{src: "/assets/assets/js/libs/jquery.placeholder.min.js"}
+    %script{src: "/assets/assets/js/libs/jquery.mousewheel.min.js"}
+    / Template Script
+    %script{src: "/assets/assets/js/template.js"}
+    %script{src: "/assets/assets/js/setup.js"}
+    / Customizer, remove if not needed
+    %script{src: "/assets/assets/js/customizer.js"}
+    / Uniform Script
+    %script{src: "/assets/plugins/uniform/jquery.uniform.min.js"}
+    / jquery-ui Scripts
+    %script{src: "/assets/assets/jui/js/jquery-ui-1.9.2.min.js"}
+    %script{src: "/assets/assets/jui/jquery-ui.custom.min.js"}
+    %script{src: "/assets/assets/jui/timepicker/jquery-ui-timepicker.min.js"}
+    %script{src: "/assets/assets/jui/jquery.ui.touch-punch.min.js"}
+    / Plugin Scripts
+    / DataTables
+    %script{src: "/assets/plugins/datatables/jquery.dataTables.min.js"}
+    %script{src: "/assets/plugins/datatables/TableTools/js/TableTools.min.js"}
+    %script{src: "/assets/plugins/datatables/FixedColumns/FixedColumns.min.js"}
+    %script{src: "/assets/plugins/datatables/dataTables.bootstrap.js"}
+    %script{src: "/assets/plugins/datatables/jquery.dataTables.columnFilter.js"}
+    / Demo Scripts
+    %script{src: "/assets/assets/js/demo/dataTables.js"}
 = render '/shared/uservoise'
-

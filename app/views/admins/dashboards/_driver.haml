@@ -8,81 +8,27 @@
           %th
           %th= t(:id)
           %th= t(:created_by)
-          %th= t(:driver)
-          %th= t(:created_at)
-          %th= t(:location_of_viecle)
-          %th= t(:name)
-          %th= t(:phone)
-          %th= t(:address)
-          %th= t(:milleage)
-          %th= t(:servie)
-          %th= t(:extra)
-          %th= t(:car_year)
-          %th= t(:car_make)
-          %th= t(:car_model)
-          %th= t(:car_color)
-          %th= t(:state)
-          %th= t(:license_number)
-          %th= t(:vehicle_id)
-          %th= t(:type_of_service)
-          %th= t(:special_equipment)
-          %th= t(:updated_at)
+          %th{class: 'hidden-phone'}= t(:driver)
+          %th{class: 'hidden-phone'}= t(:created_at)
+          %th{class: 'hidden-phone'}= t(:location_of_viecle)
+          %th{class: 'hidden-phone'}= t(:phone)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:car_year)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:car_make)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:car_model)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:car_color)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:vehicle_id)
       %tbody
         - tickets.each do |t|
           %tr
             %td= link_to 'Show', admins_ticket_path(t), class: 'btn'
             %td= t.identification
             %td= t.created_by.name if t.created_by_id
-            %td= t.driver.name if t.driver_id
-            %td= t.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
-            %td= t.location_of_viecle
-            %td= t.name
-            %td= number_to_phone(t.phone)
-            %td= t.address
-            %td= t.milleage
-            %td= t.service
-            %td= t.extra
-            %td= t.car_year
-            %td= t.car_make
-            %td= t.car_model
-            %td= t.car_color
-            %td= t.state
-            %td= t.license_number
-            %td= t.vehicle_id
-            %td
-              - if t.sling
-                .badge.badge-info= t(:sling)
-              - if t.hoist_tow
-                .badge.badge-info= t(:hoist_tow)
-              - if t.wheel_lift
-                .badge.badge-info= t(:wheel_lift)
-              - if t.flad_bed
-                .badge.badge-info= t(:flad_bed)
-              - if t.start
-                .badge.badge-info= t(:start)
-              - if t.lock_out
-                .badge.badge-info= t(:lock_out)
-              - if t.flat_tire
-                .badge.badge-info= t(:flat_tire)
-              - if t.out_of_gas
-                .badge.badge-info= t(:out_of_gas)
-              - if t.wreck
-                .badge.badge-info= t(:wreck)
-              - if t.recovery
-                .badge.badge-info= t(:recovery)
-              - unless t.other.empty?
-                .badge.badge-info= 'Other ' + t.other
-            %td
-              - if t.special_equipment_single_line_winching?
-                .badge.badge-info= 'single line winching'
-              - if t.special_equipment_dual_line_winching
-                .badge.badge-info= 'fual line winching'
-              - if t.special_equipment_snatch_blocks
-                .badge.badge-info= 'snatch blocks'
-              - if t.special_equipment_scotch_blocks
-                .badge.badge-info= 'scotch blocks'
-              - if t.special_equipment_dolly
-                .badge.badge-info= 'dolly'
-              - unless t.special_equipment_other.empty?
-                .badge.badge-info= 'other ' + t.special_equipment_other
-            %td= t.updated_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+            %td{class: 'hidden-phone'}= t.driver.name if t.driver_id
+            %td{class: 'hidden-phone'}= t.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+            %td{class: 'hidden-phone'}= t.location_of_viecle
+            %td{class: 'hidden-phone'}= number_to_phone(t.phone)
+            %td{class: 'hidden-phone hidden-tablet'}= t.car_year
+            %td{class: 'hidden-phone hidden-tablet'}= t.car_make
+            %td{class: 'hidden-phone hidden-tablet'}= t.car_model
+            %td{class: 'hidden-phone hidden-tablet'}= t.car_color
+            %td{class: 'hidden-phone hidden-tablet'}= t.vehicle_id
