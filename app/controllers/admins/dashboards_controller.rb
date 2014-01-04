@@ -4,7 +4,7 @@ class Admins::DashboardsController < AdminController
     if current_admin.is_admin
       current_account.tickets.order("id DESC").scoped{}
     else
-      current_admin.tickets.order("id DESC").scoped{}
+      current_admin.driver_tickets.order("id DESC").scoped{}
     end
   }
 end
