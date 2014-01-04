@@ -1,0 +1,169 @@
+/*********************************menu**********************************/
+#main-menu{
+	background:url(/assets/archo/menu-bg.jpg) repeat-x 0 0;
+	width:940px;
+	z-index:99;
+	box-shadow: 1px 1px 2px #9b9ca0;
+	-moz-box-shadow: 1px 1px 2px #9b9ca0;
+	-webkit-box-shadow: 1px 1px 2px #9b9ca0;
+}
+
+.menu {
+	padding:0; 
+	width:100%;
+}
+.menu > li {
+	background:url(/assets/archo/separator1.png) no-repeat left 14px;
+	float:left; 
+	position:relative;
+	padding:0px 0 0 1px;
+	width:156px;
+}
+.menu > li:first-child {
+	background-image:none;
+	padding-left:0;
+}
+
+.menu li.last {width:155px;}
+
+.menu > li a {
+	background:url(/assets/archo/menu-hover.jpg) repeat-x 0 -90px;
+	display:block;
+	position:relative;
+	font-family:"Times New Roman", Times, serif;
+	font-size:18px;
+	line-height:22px;
+	color:#fff; 
+	text-align:center;
+	text-transform:uppercase;
+	font-weight:normal;
+	padding: 29px 0 26px;
+	text-shadow: 1px 1px 1px #649ba2;
+	-moz-text-shadow: 1px 1px 1px #649ba2;
+	-webkit-text-shadow: 1px 1px 1px #649ba2;
+}
+
+.menu > li > a:hover {color:#000;}
+.menu > li.active > a, .menu > li.sfHover > a {color:#000;background-position: 0 0;}
+
+.menu > li > a:hover span, .menu > li.active > a span, .menu > li.sfHover > a span {color:#fff;}
+.menu > li.active > a strong, .menu > li.sfHover > a strong {height:9px;}
+
+.menu li:hover {visibility:	inherit; }
+
+.menu li a span {
+	font-size:13px;
+	line-height:16px;
+	color:#92e0f1;
+	display:block;
+	margin-top:-3px;
+	text-shadow: none;
+	-moz-text-shadow: none;
+	-webkit-text-shadow: none;
+}
+
+.menu li a strong {
+	display:block;
+	position:absolute;
+	bottom:0;
+	left:0;
+	height:0px;
+	background:#29292f;
+	width:100%;
+}
+
+.menu li em {
+    background: url("/assets/archo/marker-3.png") no-repeat scroll 0 0px transparent;
+    display: block;
+    height: 8px;
+    left: 74px;
+    position: absolute;
+    top: 69px;
+    width: 12px;
+	z-index:999;
+	cursor:pointer;
+}
+
+
+/******************************** submenu **************************************/
+.menu ul {
+	position:		absolute;
+	padding:		0px 0 0px 1px;
+	top:			-999em;
+	width:			156px;
+}
+
+.menu li li {width:	156px; padding:0px 0;}
+.menu li li a {
+	display:block;
+	background: url(/assets/archo/submenu-hover.jpg) repeat-x 0 -100px #FFF;
+	font-size:16px;
+	line-height:22px;
+	color: 			#242424;
+	padding:		26px 0 0 0px;
+	text-align:		center;
+	height:49px;
+	letter-spacing:0px;
+	text-shadow: none;
+	-moz-text-shadow: none;
+	-webkit-text-shadow: none;
+}
+
+.menu li:hover ul, .menu li.sfHover ul {
+	left:			0px;
+	top:			90px;
+	z-index:		999;
+}
+ul.menu li:hover li ul, ul.menu li.sfHover li ul {
+	top:			-999em;
+}
+
+.menu li li a:hover, .menu li li.sfHover > a {color:#fff;background-position: 0 0;}
+
+/******************************** submenu 2 **************************************/
+
+.menu ul {width:313px;}
+
+.menu li li li {float:left;padding-left:1px;}
+.menu li li li:first-child {padding-left:0px;}
+
+.menu li li li a {background-image:none;}
+.menu li li li a:hover {color:#0abee0;}
+
+ul.menu li li:hover ul, ul.menu li li.sfHover ul {
+	left:			157px;
+	top:			75px;
+	z-index:		9999;
+}
+ul.menu li li:hover li ul, ul.menu li li.sfHover li ul {
+	top:			-999em;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+	#main-menu{ width:748px;}
+	.menu > li {width:124px;}
+	.menu li.last {width: 123px;}
+	.menu ul {width:249px;}
+	.menu li li {width:124px;}
+	ul.menu li li:hover ul, ul.menu li li.sfHover ul {left:125px;}
+	.menu li em {left:54px;}
+}
+@media only screen and (max-width: 767px) {
+	#main-menu{ width:300px;box-shadow:none;-moz-box-shadow:none;-webkit-box-shadow:none;background:none;}
+	.menu > li, .menu > li.last, .menu > li:first-child {width:300px;float:none; background: url("/assets/archo/menu-bg.jpg") repeat-x scroll 0 -32px transparent;margin-bottom:7px;padding:0;}
+	.menu > li a {text-align:left;padding: 11px 0 12px 20px;}
+	.menu li em {top:17px;left:121px;}
+	.menu ul {position:relative !important;top:0 !important;width:290px;left:0 !important;padding: 7px 0 0 10px;}
+	.menu li li {width:290px;margin-bottom:7px;}
+	.menu li li a {height: 38px; padding: 20px 0 0 20px; text-align:left;}
+	.menu ul ul, .menu li li li {width:280px;float:none;}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#main-menu{ width:420px;}
+	.menu > li, .menu > li.last, .menu > li:first-child {width:420px;}
+	.menu ul {width:410px;}
+	.menu ul ul {width:400px;}
+	.menu li li {width:410px;}
+	.menu ul ul, .menu li li li {width:400px;}
+
+}

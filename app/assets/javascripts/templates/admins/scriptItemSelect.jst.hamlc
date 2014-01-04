@@ -1,0 +1,17 @@
+%p.script-item-select
+  %select.add-plain-script-item
+    %option Add a script item
+    %optgroup{label: 'General'}
+      %option{value: 'PlainScriptItem'} Script Item
+    %optgroup{label: 'Unique Prompts'}
+      %option{value: 'PatchInstructionsScriptItem'} Patch Instructions
+      %option{value: 'OpeningMessageScriptItem'} Opening Message
+      %option{value: 'ClosingMessageScriptItem'} Closing Message
+      %option{value: 'CallControlScriptItem'} Call Control
+    %optgroup{label: 'Caller Data'}
+      %option{value: 'NameScriptItem'} Ask for Caller / Company name
+      %option{value: 'AddressScriptItem'} Ask for address
+      %option{value: 'EmailScriptItem'} Ask for email
+      %option{value: 'PhoneScriptItem'} Ask for phone details
+      %option{value: 'EmergencyScriptItem'} Ask if emergency
+      %option{value: 'RefererScriptItem'} Ask how they heard about us

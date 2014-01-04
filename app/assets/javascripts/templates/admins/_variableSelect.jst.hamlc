@@ -1,0 +1,6 @@
+%select.variable-select
+  %option{value: ''} Add a variable
+  %option{value: '{AGENT_NAME}'} {AGENT_NAME}
+  %option{value: '{GREETING}'} {GREETING}
+  %option{value: '{CALLER_NAME}'} {CALLER_NAME}
+  %option{value: '{COMPANY_NAME}'} {COMPANY_NAME}

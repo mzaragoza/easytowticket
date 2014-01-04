@@ -1,0 +1,69 @@
+::selection {
+background:#e5382f !important;
+}
+::-moz-selection {
+background:#e5382f !important;
+}
+body { background: url("/assets/connect/red-bg.jpg") repeat fixed 50% 0 #333333 !important; }
+a.link-name { color:#e5382f !important; }
+.shade1 { background-color: #CF3229 !important; }
+.shade2 { background-color: #E14F47 !important; }
+.shade3 { background-color: #EB746E !important; }
+.sub-title { color: #e5382f !important; }
+.team-name span {  color: #e5382f !important; }
+.text-color-red { color: #e5382f !important; }
+.text-color-red { color: #e5382f !important; }
+
+.text-color-blue { color: #e5382f !important; }
+.post-holder .date .month { background: none repeat scroll 0 0 #e5382f !important; color: #FFFFFF; }
+.newsletter-button:hover { background: none repeat scroll 0 0 #e5382f !important; border: 1px solid #AF242C; color: #FFFFFF; }
+.quotes .flex-control-nav li a:hover, .quotes .flex-control-nav li a.active { background: none repeat scroll 0 0 #e5382f !important; }
+.sf-menu li.active { background: none repeat scroll right 0 #e5382f !important; }
+.sf-menu li:hover, .sf-menu li.current-menu-item, .sf-menu li.sfHover, .sf-menu li.current-menu-parent { background: none repeat scroll 0 0 #e5382f !important; }
+a.moduleItemReadMore:before { background: #e5382f !important; }
+
+.list-style-1 li a:hover { color: #e5382f !important; }
+.list-style li a:hover { color: #e5382f !important; }
+.faq-accordion .qa { color: #e5382f !important; }
+.faq_list span.marker { color:#e5382f !important; }
+.price-column-featured h4 { background-color: #e5382f !important; }
+span.link_post:hover { background-color: #e5382f !important; }
+span.zoom:hover { background-color: #e5382f !important; }
+span.video:hover { background-color: #e5382f !important; }
+
+
+
+
+
+
+
+
+
+
+.post-holder .date { 	border: 1px solid #b23730 !important;
+	background-image: linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -o-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -moz-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -webkit-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -ms-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-color: #C74039 !important;
+	color:#fff !important;
+	text-shadow: 1px -1px 0px #a43b37 !important;
+	filter: dropshadow(color=#a43b37, offx=1, offy=1) !important;
+ }
+
+.button.yellow, input[type="button"] { 	border: 1px solid #b23730 !important;
+	background-image: linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -o-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -moz-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -webkit-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-image: -ms-linear-gradient(bottom, #C74039 0%, #E35752 100%) !important;
+	background-color: #C74039 !important;
+	color:#fff !important;
+	text-shadow: 1px -1px 0px #a43b37 !important;
+	filter: dropshadow(color=#a43b37, offx=1, offy=1) !important;
+ }
+.button.yellow:hover {background: #C74039 !important;}
+
+
+

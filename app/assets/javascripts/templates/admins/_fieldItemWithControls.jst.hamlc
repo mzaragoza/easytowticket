@@ -1,0 +1,28 @@
+.control-group
+  .controls
+    .input-append
+      %input.field.span8{type: 'text', value: @label, disabled: @disabled, required: true, placeholder: 'Type in the label for the field here'}
+      .btn-group
+        %button.btn.dropdown-toggle{"data-toggle" => "dropdown"}
+          Actions
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a.required
+              - if @required
+                %i.icon-ok
+              Make this required
+          - unless @type == 'recipient_select'
+            %li.divider
+            %li
+              %a.notify-sms
+                - if @options.notifySms
+                  %i.icon-ok
+                Notify via SMS
+            %li
+              %a.notify-email
+                - if @options.notifyEmail
+                  %i.icon-ok
+                Notify via Email
+
+    %i.icon-move.field-handle

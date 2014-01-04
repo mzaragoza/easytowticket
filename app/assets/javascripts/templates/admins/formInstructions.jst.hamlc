@@ -1,0 +1,33 @@
+%aside#form-instructions
+  %h3 Form Structure
+  .help-text
+    %p The form is comprised of sections. Sections are comprised of script items. Script items are comprised of fields and agent prompts.
+
+  %h3 Prompt
+  .help-text
+    %p Prompts are unique script items meant to be read by the agent to the caller. They do not have any fields inside them.
+
+  %h3 Reserved fields
+  .help-text
+    %p These are fields that are used very frequently in the old system.
+
+  %h3 Moving items inside the form
+  .help-text
+    %ul
+      %li To move sections, click and drag the move icon at the top left corner of the section.
+      %li To move script items, click and drag the move icon at the top left corner of the script item.
+      %li To move field items, click and drag the move icon at the right side of the field.
+
+  %h3 Deleting items inside the form
+  .help-text
+    %ul
+      %li To delete sections, click the 'Remove this section' button at the top right corner of the section.
+      %li To delete script items, click the X button at the top right corner of the script item.
+      %li To delete field items, click the - button at the left side of the field.
+
+  %h3 Sections and Triggers
+  .help-text
+    %ul
+      %li Additional sections are hidden to the agent by default.
+      %li The hidden sections will only show when trigger conditions are met.
+      %li Trigger conditions can only be placed inside Dropdown or Radio fields.

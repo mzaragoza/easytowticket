@@ -1,0 +1,78 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * MoonCake v1.3.1 - Main Stylesheet
+ *
+ * This file is part of MoonCake, an Admin template build for sale at ThemeForest.
+ * For questions, suggestions or support request, please mail me at maimairel@yahoo.com
+ *
+ * Development Started:
+ * July 28, 2012
+ * Last Update:
+ * December 07, 2012
+ *
+ */
+
+/* Core Stylesheets
+================================================== */
+/*
+@import url("layout.css");
+@import url("widget.css");
+@import url("form.css");
+@import url("table.css");
+@import url("button.css");
+@import url("misc.css");
+@import url("utils.css");
+*/
+/* Elements Stylesheets
+================================================== */
+/*
+@import url("ui.css");
+@import url("icons.css");
+@import url("statistic.css");
+@import url("invoice.css");
+*/
+/* Extra Stylesheets
+================================================== */
+/*
+@import url("mail.css");
+@import url("profile.css");
+@import url("gallery.css");
+*/
+/* Plugin Stylesheets
+================================================== */
+/*
+@import url("/users/plugins/elfinder/css/elfinder.full.css");
+@import url("/users/plugins/fullcalendar/fullcalendar.css");
+*/
+/* IE Stylesheets
+================================================== */
+/*
+@import url("lt-ie9.css");
+*/
+/* Demo Stylesheets
+================================================== */
+/*
+@import url("demo.css");
+@import url("customizer.css");
+*/
+.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+}
+
+.content {
+  margin: 12px;
+}
+
+.shadow {
+  -moz-box-shadow: 1px 1px 2px #000;
+  -webkit-box-shadow: 1px 1px 2px #000;
+  box-shadow: 1px 1px 2px #000;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#000000');
+}
+

@@ -1,16 +1,14 @@
-.mws-panel.grid_8
-  .mws-panel-header
-    .pull-right
+.span12.widget
+  .widget-header
+    %span.title 
       = link_to 'Add', new_admins_ticket_path, class: 'btn'
-    %span
-      %i.icon-table
-      Tickets
-  .mws-panel-body.no-padding
-    %table.mws-datatable-fn.mws-table
+      Tickets #{tickets.count}
+  .widget-content.table-container
+    %table.table.table-striped.dataTable
       %thead
         %tr
           %th
-          %th= t(:id)
+          %th{class: 'sorting'}= t(:id)
           %th= t(:created_by)
           %th= t(:driver)
           %th= t(:created_at)
@@ -25,7 +23,6 @@
           %th= t(:car_make)
           %th= t(:car_model)
           %th= t(:car_color)
-          %th= t(:driver)
           %th= t(:state)
           %th= t(:license_number)
           %th= t(:vehicle_id)
@@ -51,7 +48,6 @@
             %td= t.car_make
             %td= t.car_model
             %td= t.car_color
-            %td= t.driver
             %td= t.state
             %td= t.license_number
             %td= t.vehicle_id
@@ -92,3 +88,4 @@
               - unless t.special_equipment_other.empty?
                 .badge.badge-info= 'other ' + t.special_equipment_other
             %td= t.updated_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+

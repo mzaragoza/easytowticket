@@ -1,0 +1,21 @@
+%h3
+  %i.icon-move.section-handle
+  Section Controls
+  %a.pull-right.btn.btn-danger.btn-small.remove-section Remove this section
+
+.section-controls.form-horizontal
+  .control-group
+    %label.control-label Section name
+    .controls
+      %input.section-name{type: 'text', placeholder: 'Type in a name for your section', required: true, value: @name}
+
+%h3
+  Script Items
+  %a{href: '#', class: "pull-right icon-chevron-#{if @collapsed then 'left' else 'down'} toggle-script-items"}
+
+.script-items
+
+!= (JST['templates/admins/scriptItemSelect'])()
+
+%p.add-section-link
+  %a.btn.btn-small.btn-info.add-section Add a section

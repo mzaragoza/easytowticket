@@ -1,0 +1,144 @@
+.sf-menu,.sf-menu * {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.sf-menu {
+line-height:1.0;
+}
+
+.sf-menu ul li {
+width:100%;
+background:url(/assets/connect/sub-menu-border.jpg) repeat-x 0 0;
+}
+
+.sf-menu li:hover {
+visibility:inherit;
+}
+
+.sf-menu li {
+float:left;
+position:relative;
+}
+
+.sf-menu a {
+display:block;
+position:relative;
+}
+
+.sf-menu li:hover ul,.sf-menu li.sfHover ul {
+left:0;
+top:42px;
+z-index:99;
+}
+
+ul.sf-menu li li:hover ul,ul.sf-menu li li.sfHover ul {
+left:176px;
+top:0;
+}
+
+ul.sf-menu li li li:hover ul,ul.sf-menu li li li.sfHover ul {
+left:10em;
+top:0;
+}
+
+.sf-menu > li:first-child {
+border-left:0 none;
+}
+
+.sf-menu > li:last-child {
+border-right:0 none;
+}
+
+.sf-menu > li:after {
+display:block;
+position:absolute;
+bottom:0;
+content:"";
+z-index:10;
+height:40px;
+}
+
+.sf-menu > li {
+border-left:1px solid #333;
+border-right:1px solid #000;
+}
+
+.sf-menu > li+li+li+li+li+li > a {
+padding:0 18px;
+}
+
+.sf-menu > li a {
+font-size:12px;
+line-height:40px;
+font-family:'Open Sans', Arial;
+font-weight:600;
+color:#fff;
+text-transform:capitalize;
+padding:0 30px 0 18px;
+}
+
+.sf-menu li.active {
+background:none repeat scroll right 0 #F3930A;
+}
+
+.sf-menu li:hover,.sf-menu li.current-menu-item,.sf-menu li.sfHover,.sf-menu li.current-menu-parent {
+background:none repeat scroll 0 0 #F3930A;
+}
+
+.sf-menu ul {
+position:absolute;
+top:-999em;
+width:276px;
+background:#2c2c2c;
+-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.24);
+-moz-box-shadow:0 1px 3px rgba(0,0,0,0.24);
+box-shadow:0 1px 3px rgba(0,0,0,0.24);
+}
+
+.sf-menu li li a {
+padding:0 19px;
+}
+
+.sf-sub-indicator {
+text-indent:-999em;
+width:5px;
+display:inline-block;
+background:url(/assets/connect/icons/sf-sub-indicator.png) no-repeat;
+position:relative;
+left:15px;
+top:19px;
+}
+
+ul.sf-menu li:hover li ul,ul.sf-menu li.sfHover li ul,ul.sf-menu li li:hover li ul,ul.sf-menu li li.sfHover li ul {
+top:-999em;
+}
+
+.sf-menu > li+li > a,.sf-menu > li+li+li > a,.sf-menu > li+li+li+li > a,.sf-menu > li+li+li+li+li > a,.sf-menu > li+li+li+li+li+li+li > a {
+padding:0 30px 0 18px;
+}
+
+.sf-menu > li li > a > .sf-sub-indicator,#responsive-main-nav-menu {
+display:none;
+}
+
+@media only screen and (max-width: 767px) {
+#main-nav-menu {
+display:none;
+}
+
+#responsive-main-nav-menu {
+background:none repeat scroll 0 0 #333;
+border:1px solid #000;
+color:#FFF;
+display:block;
+float:left;
+font-family:'Open Sans', Arial;
+font-size:12px;
+line-height:1em;
+width:56%;
+margin:7px 0;
+padding:3px;
+}
+}

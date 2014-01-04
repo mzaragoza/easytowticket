@@ -1,0 +1,7 @@
+%section.rendered-section{id: @id}
+  %h2= @name
+
+  .script-items
+    - for scriptItem in @scriptItems
+      != scriptItem.renderPreview()
+

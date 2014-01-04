@@ -1,0 +1,72 @@
+- if @params.prompt
+  .custom-content{'data-prompt' => @params.prompt}!= @params.prompt
+
+- if @params.fields.length > 0
+  - for field in @params.fields
+    .control-group
+      - if field.required
+        %label.control-label.required{for: field.id}= "#{field.label} *"
+      - else
+        %label.control-label{for: field.id}= field.label
+
+      .controls
+        - if field.type == 'text_area' || field.type == 'referer' || field.type == 'details'
+          %textarea{name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'select'
+          %select{name: field.name, id: field.id, required: field.required}
+            %option Choose an answer
+            - if $.isEmptyObject(field.dataSource)
+              %option Answer #1
+              %option Answer #2
+            - else
+              - for answer in field.dataSource
+                %option{value: answer[1]}= answer[0]
+        - else if field.type == 'radio' || field.type == 'checkbox'
+          - if $.isEmptyObject(field.dataSource)
+            %label{class: field.type}
+              %input{type: field.type}
+              Answer #1
+          - else
+            - for answer in field.dataSource
+              %label{class: field.type}
+                - fieldName = if field.type == 'checkbox'
+                  - "#{field.name}[]"
+                - else
+                  - field.name
+                %input{type: field.type, id: field.id, name: fieldName, value: answer[1]}
+                = answer[0]
+        - else if field.type == 'recipient_select'
+          %select{name: field.name, id: field.id, required: field.required}
+            %option{value: ''} The Office
+            - if $.isEmptyObject(field.dataSource)
+              %option Recipient #1
+              %option Recipient #2
+            - else
+              - for user in field.dataSource
+                %option{value: user[1]}= user[0]
+        - else if field.type == 'zip'
+          %input.zip-code-lookup{type: 'text', name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'city'
+          %input.zip-code-lookup-city{type: 'text', name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'state'
+          %select.zip-code-lookup-state{name: field.name, id: field.id, required: field.required}
+            - if $.isEmptyObject(field.dataSource)
+              %option State #1
+              %option State #2
+            - else
+              - for state in field.dataSource
+                %option{value: state[1]}= state[0]
+        - else if field.type == 'email'
+          %input{type: 'email', name: field.name, id: field.id, required: field.required}
+        - else if _.contains(['phone_number', 'local', 'extension', 'mobile', 'alt_phone'], field.type)
+          %input{type: 'tel', name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'international_phone'
+          %input.intl-phone{type: 'tel', name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'emergency'
+          %input{type: 'checkbox', name: field.name, id: field.id, required: field.required}= @label
+        - else if field.type == 'first_name' || field.type == 'last_name'
+          %input{type: 'text', name: field.name, id: field.id, required: field.required}
+        - else if field.type == 'company_name'
+          %input{type: 'text', name: field.name, id: field.id, required: field.required}
+        - else
+          %input{type: 'text', name: field.name, id: field.id, required: field.required}

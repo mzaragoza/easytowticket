@@ -3,20 +3,42 @@
 /[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
 /[if IE 8] <html class="lt-ie9" lang="en">
 / [if gt IE 8]><!
-%html{lang: "en"}
+%html{:lang => "en"}
   / <![endif]
   %head
-    %meta{charset: "utf-8"}/
-    / Viewport Metatag
-    %meta{content: "width=device-width,initial-scale=1.0", name: "viewport"}/
-    / Required Stylesheets
-    = stylesheet_link_tag "admins/login", media: "all", "data-turbolinks-track" => true
-    %title MWS Admin - Login Page
-    = csrf_meta_tags
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    = stylesheet_link_tag 'admins/application_login', :media => "all"
+    /[if lt IE 9]
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %title=t(:log_in)
   %body
-    #mws-login-wrapper
-      = yield
-    / JavaScript Plugins
-    = javascript_include_tag "admins/login", "data-turbolinks-track" => true
-    = render '/shared/uservoise'
+    #logo-wrap
+      =image_tag 'logo.png'
+    %br
+    #login-errors-wrap
+      - unless flash[:notice].blank?
+        %br
+        %br
+        .alert.fade.in
+          = content_tag :div, flash[:notice]
+      - unless flash[:error].blank?
+        %br
+        %br
+        .alert.alert-danger.fade.in
+          = content_tag :div, flash[:error]
+      - unless flash[:alert].blank?
+        %br
+        %br
+        .alert.alert-info.fade.in
+          = content_tag :div, flash[:alert]
+    %br{:style => 'clear:both;'}
+    #login-wrap.admin-login-wrap
+      #login-ribbon
+        %i.icon-lock
+      #login-inner.login-inset
+        #login-circle
+          %section#login-form.login-inner-form{"data-angle" => "0"}
+            =yield
+    = javascript_include_tag "admins/application_login"
 
