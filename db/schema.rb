@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.string   "car_make",                               default: ""
     t.string   "car_model",                              default: ""
     t.string   "car_color",                              default: ""
+    t.string   "car_tag",                                default: ""
     t.string   "license_number",                         default: ""
     t.string   "vehicle_id",                             default: ""
     t.boolean  "sling",                                  default: false, null: false

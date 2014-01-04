@@ -14,6 +14,7 @@ Fabricator(:ticket) do
   car_make                                 { Faker::Lorem.words(2).join(' ') }
   car_model                                { Faker::Lorem.words(2).join(' ') }
   car_color                                { Faker::Lorem.words(2).join(' ') }
+  car_tag                                  { (0...4).map { (65 + rand(26)).chr }.join + '-' + (0...4).map { (65 + rand(26)).chr }.join}
   state                                    { Faker::AddressUS.state_abbr }
   license_number                           { ['SSSS-FFF-YY-DDD-N', 'F25592150094', 'SSSS-FFF-YY-DDD-N', 'F255-921-50-094-0'].sample }
   vehicle_id                               { ['VIN2HNYD284X7H536884', 'VIN19UUA8F58CA017192', 'VINJH4CU26619C029283', 'VIN19UUA66227A026955'].sample }
@@ -35,6 +36,7 @@ Fabricator(:ticket) do
   special_equipment_dolly                  { [true, false].sample}
   special_equipment_other                  { Faker::Lorem.words(2).join(' ') }
   operators_comments                       { Faker::Lorem.words(20).join(' ') }
+  status                                   { ['inshop'].sample }
   status                                   { ['inshop'].sample }
   after_build do |t|
     t.account    ||= Account.last || Fabricate(:account)
