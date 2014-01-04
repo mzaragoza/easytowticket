@@ -1,0 +1,37 @@
+!!!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
+%html{lang: "en"}
+  / <![endif]
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    / Bootstrap Stylesheet
+    %link{href: "/assets/bootstrap/css/bootstrap.min.css", media: "screen", rel: "stylesheet"}/
+    / Uniform Stylesheet
+    %link{href: "/assets/plugins/uniform/css/uniform.default.css", media: "screen", rel: "stylesheet"}/
+    / Plugin Stylsheets first to ease overrides
+    / End Plugin Stylesheets
+    / Main Layout Stylesheet
+    %link{href: "/assets/assets/css/fonts/icomoon/style.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/login.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/plugins/zocial/zocial.css", media: "screen", rel: "stylesheet"}/
+    / Le HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    %title MoonCake :: Responsive Admin Template - Login
+  %body
+    = yield
+    / Core Scripts
+    %script{src: "/assets/assets/js/libs/jquery-1.8.3.min.js"}
+    %script{src: "/assets/assets/js/libs/jquery.placeholder.min.js"}
+    / Login Script
+    %script{src: "/assets/assets/js/login.js"}
+    / Validation
+    %script{src: "/assets/plugins/validate/jquery.validate.min.js"}
+    / Uniform Script
+    %script{src: "/assets/plugins/uniform/jquery.uniform.min.js"}
