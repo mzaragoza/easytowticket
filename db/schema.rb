@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20131129222903) do
     t.boolean  "special_equipment_scotch_blocks",        default: false, null: false
     t.boolean  "special_equipment_dolly",                default: false, null: false
     t.string   "special_equipment_other",                default: ""
+    t.boolean  "on_hold",                                default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

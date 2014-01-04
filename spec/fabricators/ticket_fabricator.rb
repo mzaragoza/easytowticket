@@ -3,13 +3,15 @@ Fabricator(:ticket) do
   name                                     { Faker::Name.first_name + ' ' + Faker::Name.last_name }
   phone                                    { Faker::PhoneNumber.short_phone_number  }
   address                                  {  Faker::AddressUS.street_address + ' ' + Faker::AddressUS.secondary_address + ' ' + Faker::AddressUS.secondary_address + ' ' + Faker::AddressUS.state_abbr + ' ' + Faker::AddressUS.zip_code }
+  address2                                 { Faker::AddressUS.secondary_address }
+  city                                     { Faker::Address.city }
   zip                                      { Faker::AddressUS.zip_code }
   milleage_finish                          { rand(1000000)  }
   milleage_start                           { rand(1000000)  }
   service_time_finish                      { Time.new + 1.hour }
   service_time_start                       { Time.new }
-  extra_truck_finish                      {  }
-  extra_truck_start                       {  }
+  extra_truck_finish                       { Time.new + 1.hour }
+  extra_truck_start                        { Time.new  }
   car_year                                 { Date.today.year - rand(40) }
   car_make                                 { Faker::Lorem.words(2).join(' ') }
   car_model                                { Faker::Lorem.words(2).join(' ') }

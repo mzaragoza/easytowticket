@@ -54,6 +54,7 @@ class CreateTickets < ActiveRecord::Migration
       t.boolean  :special_equipment_scotch_blocks,            :null => false, default: false
       t.boolean  :special_equipment_dolly,                    :null => false, default: false
       t.string   :special_equipment_other,                    default: ''
+      t.boolean  :on_hold,                                    :null => false, default: false
 
       t.timestamps
     end

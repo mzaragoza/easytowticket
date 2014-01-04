@@ -16,7 +16,7 @@
           %th{class: 'hidden-phone hidden-tablet'}= t(:car_make)
           %th{class: 'hidden-phone hidden-tablet'}= t(:car_model)
           %th{class: 'hidden-phone hidden-tablet'}= t(:car_color)
-          %th{class: 'hidden-phone hidden-tablet'}= t(:vehicle_id)
+          %th{class: 'hidden-phone hidden-tablet'}= t(:vin_number)
       %tbody
         - tickets.each do |t|
           %tr
@@ -31,4 +31,4 @@
             %td{class: 'hidden-phone hidden-tablet'}= t.car_make
             %td{class: 'hidden-phone hidden-tablet'}= t.car_model
             %td{class: 'hidden-phone hidden-tablet'}= t.car_color
-            %td{class: 'hidden-phone hidden-tablet'}= t.vehicle_id
+            %td{class: 'hidden-phone hidden-tablet'}= t.vin_number

@@ -1,4 +1,4 @@
-.span12.widget
+.span8.widget
   .widget-header
     %span.title Ticket Summary
     .toolbar
@@ -17,11 +17,23 @@
           %th= t(:created_by)
           %td= ticket.created_by.name
         %tr
+          %th= t(:created_by)
+          %td= ticket.created_by.name
+        %tr
+          %th= t(:created_at)
+          %td= ticket.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+        %tr
           %th= t(:driver)
-          %td= ticket.driver.name
+          %td= ticket.driver.name if ticket.driver
+        -#%tr
+          %th= t(:truck)
+          %td= ticket.truck.name if ticket.truck
         %tr
           %th= t(:location_of_viecle)
           %td= ticket.location_of_viecle
+        %tr
+          %th= t(:id)
+          %td= ticket.id
         %tr
           %th= t(:name)
           %td= ticket.name
@@ -37,50 +49,62 @@
             = ticket.state
             = ticket.zip
         %tr
-          %th= t(:milleage_finish)
-          %td= ticket.milleage_finish
-        %tr
-          %th= t(:milleage_start)
-          %td= ticket.milleage_start
-        %tr
-          %th= t(:total_milleage)
-          %td= ticket.milleage
-        %tr
-          %th= t(:service_time_finish)
-          %td= ticket.service_time_finish
-        %tr
-          %th= t(:service_time_start)
-          %td= ticket.service_time_start
-        %tr
-          %th= t(:total_service_time)
-          %td= ticket.service
-        %tr
-          %th= t(:extra_truck_finish)
-          %td= ticket.extra_truck_finish
-        %tr
-          %th= t(:extra_truck_start)
-          %td= ticket.extra_truck_start
-        %tr
-          %th= t(:total_extra_truck)
-          %td= ticket.extra
-        %tr
-          %th= t(:car_year)
-          %td= ticket.car_year
-        %tr
-          %th= t(:car_make)
-          %td= ticket.car_make
-        %tr
-          %th= t(:car_model)
-          %td= ticket.car_model
-        %tr
-          %th= t(:car_color)
-          %td= ticket.car_color
-        %tr
           %th= t(:license_number)
           %td= ticket.license_number
         %tr
-          %th= t(:vehicle_id)
-          %td= ticket.vehicle_id
+          %th= t(:service)
+          %td
+            %strong Start 
+            #{ticket.service_time_start.in_time_zone(current_account.time_zone).strftime('%D %r')}
+            %br
+            %strong Finish 
+            #{ticket.service_time_finish.in_time_zone(current_account.time_zone).strftime('%D %r')}
+            %br
+            %strong Hours 
+            #{ticket.service}
+        %tr
+          %th= t(:extra_truck)
+          %td
+            %strong Start 
+            #{ticket.extra_truck_start.in_time_zone(current_account.time_zone).strftime('%D %r')}
+            %br
+            %strong Finish 
+            #{ticket.extra_truck_finish.in_time_zone(current_account.time_zone).strftime('%D %r')}
+            %br
+            %strong Hours 
+            #{ticket.extra}
+        %tr
+          %th= t(:milleage)
+          %td
+            %strong Start 
+            #{ticket.milleage_start}
+            %br
+            %strong Finish 
+            #{ticket.milleage_finish}
+            %br
+            %strong= t(:miles) 
+            #{ticket.milleage}
+        %tr
+          %th= t(:car)
+          %td
+            %strong Year
+            = ticket.car_year
+            %br
+            %strong Make
+            = ticket.car_make
+            %br
+            %strong Model
+            = ticket.car_model
+            %br
+            %strong Color
+            = ticket.car_color
+            %br
+        %tr
+          %th= t(:vin_number)
+          %td= ticket.vin_number
+        %tr
+          %th= t(:tag_number)
+          %td= ticket.tag_number
         %tr
           %th= t(:type_of_service)
           %td
@@ -124,14 +148,55 @@
             - unless ticket.other.empty?
               .badge.badge-info= t(:other) + ' ' + ticket.other 
         %tr
+          %th= t(:tow_destination)
+          %td= ticket.tow_destination
+        %tr
           %th= t(:operators_comments)
           %td= ticket.operators_comments
         %tr
           %th= t(:status)
           %td= ticket.status
         %tr
-          %th= t(:created_at)
-          %td= ticket.created_at
-        %tr
           %th= t(:updated_at)
-          %td= ticket.updated_at
+          %td= ticket.updated_at.in_time_zone(current_account.time_zone).strftime('%D %r')
+        %tr
+          %th= t(:on_hold)
+          %td
+            - if ticket.on_hold
+              .badge.badge-info= t(:on_hold)
+.span4.widget
+  .widget-header
+    %span.title Charges
+    .toolbar
+      .btn-group
+        = link_to edit_admins_ticket_path(ticket), class: 'btn' do
+          %i.icol-pencil
+  .widget-content.table-container
+    %table.table.table-striped.table-detail-view
+      %thead
+        %tr
+          %th{colspan: "2"}
+            %i.icol-exclamation
+            = ticket.identification
+      %tbody
+        %tr
+          %th= t(:mileage)
+          %td= ticket.milleage_charge
+        %tr
+          %th= t(:towing)
+          %td= ticket.towing_charge
+        %tr
+          %th= t(:labor)
+          %td= ticket.labor_charge
+        %tr
+          %th= t(:storage)
+          %td= ticket.storage_charge
+        %tr
+          %th= t(:administration)
+          %td= ticket.administration_fee
+        %tr
+          %th= t(:tax)
+          %td= ticket.tax
+        %tr
+          %th= t(:total)
+          %td= ticket.total_charge

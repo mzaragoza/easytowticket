@@ -37,6 +37,9 @@ class Ticket < ActiveRecord::Base
     end
   end
 
+  def total_charge
+    10000000000000
+  end
   private
   def set_identification
     self.identification = self.account.ticket_prefix + (self.account.tickets.count + 100000000).to_s
