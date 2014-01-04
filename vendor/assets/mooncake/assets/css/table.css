@@ -233,7 +233,7 @@ margin-bottom:0!important;
 border-top:none;
 }
 
-@media max-width 767px {
+@media (max-width 767px) {
 .table-flipscroll th,.table td {
 vertical-align:top;
 margin:0;
@@ -326,7 +326,7 @@ border-left:0;
 }
 }
 
-@media max-width 480px {
+@media (max-width 480px) {
 .table-detail-view {
 table-layout:fixed!important;
 }
