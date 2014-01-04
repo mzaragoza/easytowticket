@@ -1,132 +1,89 @@
-.mws-panel.grid_8
-  .mws-panel-header
-    .pull-right
-      = link_to 'Edit', edit_admins_ticket_path(ticket), class: 'btn'
-    %span
-      %i.icon-book
-      Ticket Summary
-  .mws-panel-body.no-padding
-    %ul.mws-summary.clearfix
-      %li
-        %span.key
-          = t(:created_by_id)
-        %span.val
-          %span.text-nowrap= ticket.created_by.name
-      %li
-        %span.key
-          = t(:location_of_viecle)
-        %span.val
-          %span.text-nowrap= ticket.location_of_viecle
-      %li
-        %span.key
-          = t(:name)
-        %span.val
-          %span.text-nowrap= ticket.name
-      %li
-        %span.key
-          = t(:phone)
-        %span.val
-          %span.text-nowrap= ticket.phone
-      %li
-        %span.key
-          = t(:address)
-        %span.val
-          %span.text-nowrap= ticket.address
-      %li
-        %span.key
-          = t(:zip)
-        %span.val
-          %span.text-nowrap= ticket.zip
-      %li
-        %span.key
-          = t(:milleage_finish)
-        %span.val
-          %span.text-nowrap= ticket.milleage_finish
-      %li
-        %span.key
-          = t(:milleage_start)
-        %span.val
-          %span.text-nowrap= ticket.milleage_start
-      %li
-        %span.key
-          = t(:milleage)
-        %span.val
-          %span.text-nowrap= ticket.milleage
-      %li
-        %span.key
-          = t(:service_time_finish)
-        %span.val
-          %span.text-nowrap= ticket.service_time_finish.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.service_time_finish
-      %li
-        %span.key
-          = t(:service_time_start)
-        %span.val
-          %span.text-nowrap= ticket.service_time_start.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.service_time_start
-      %li
-        %span.key
-          = t(:service_time)
-        %span.val
-          %span.text-nowrap= ticket.service
-      %li
-        %span.key
-          = t(:extra_truck_finish)
-        %span.val
-          %span.text-nowrap= ticket.extra_truck_finish.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.extra_truck_finish
-      %li
-        %span.key
-          = t(:extra_truck_start)
-        %span.val
-          %span.text-nowrap= ticket.extra_truck_start.in_time_zone(current_account.time_zone).strftime('%D %r') if ticket.extra_truck_start
-      %li
-        %span.key
-          = t(:extra_truck_total)
-        %span.val
-          %span.text-nowrap= ticket.extra
-      %li
-        %span.key
-          = t(:car_year)
-        %span.val
-          %span.text-nowrap= ticket.car_year
-      %li
-        %span.key
-          = t(:car_make)
-        %span.val
-          %span.text-nowrap= ticket.car_make
-      %li
-        %span.key
-          = t(:car_model)
-        %span.val
-          %span.text-nowrap= ticket.car_model
-      %li
-        %span.key
-          = t(:car_color)
-        %span.val
-          %span.text-nowrap= ticket.car_color
-      %li
-        %span.key
-          = t(:driver)
-        %span.val
-          %span.text-nowrap= ticket.driver
-      %li
-        %span.key
-          = t(:state)
-        %span.val
-          %span.text-nowrap= ticket.state
-      %li
-        %span.key
-          = t(:license_number)
-        %span.val
-          %span.text-nowrap= ticket.license_number
-      %li
-        %span.key
-          = t(:vehicle_id)
-        %span.val
-          %span.text-nowrap= ticket.vehicle_id
-      %li
-        %span.key
-          = t(:type_of_service)
-        %span.val
-          %span.text-nowrap
+.span12.widget
+  .widget-header
+    %span.title Ticket Summary
+    .toolbar
+      .btn-group
+        = link_to edit_admins_ticket_path(ticket), class: 'btn' do
+          %i.icol-pencil
+  .widget-content.table-container
+    %table.table.table-striped.table-detail-view
+      %thead
+        %tr
+          %th{colspan: "2"}
+            %i.icol-exclamation
+            = ticket.identification
+      %tbody
+        %tr
+          %th= t(:created_by)
+          %td= ticket.created_by.name
+        %tr
+          %th= t(:driver)
+          %td= ticket.driver.name
+        %tr
+          %th= t(:location_of_viecle)
+          %td= ticket.location_of_viecle
+        %tr
+          %th= t(:name)
+          %td= ticket.name
+        %tr
+          %th= t(:phone)
+          %td= ticket.phone
+        %tr
+          %th= t(:address)
+          %td
+            = ticket.address
+            = ticket.address2
+            = ticket.city
+            = ticket.state
+            = ticket.zip
+        %tr
+          %th= t(:milleage_finish)
+          %td= ticket.milleage_finish
+        %tr
+          %th= t(:milleage_start)
+          %td= ticket.milleage_start
+        %tr
+          %th= t(:total_milleage)
+          %td= ticket.milleage
+        %tr
+          %th= t(:service_time_finish)
+          %td= ticket.service_time_finish
+        %tr
+          %th= t(:service_time_start)
+          %td= ticket.service_time_start
+        %tr
+          %th= t(:total_service_time)
+          %td= ticket.service
+        %tr
+          %th= t(:extra_truck_finish)
+          %td= ticket.extra_truck_finish
+        %tr
+          %th= t(:extra_truck_start)
+          %td= ticket.extra_truck_start
+        %tr
+          %th= t(:total_extra_truck)
+          %td= ticket.extra
+        %tr
+          %th= t(:car_year)
+          %td= ticket.car_year
+        %tr
+          %th= t(:car_make)
+          %td= ticket.car_make
+        %tr
+          %th= t(:car_model)
+          %td= ticket.car_model
+        %tr
+          %th= t(:car_color)
+          %td= ticket.car_color
+        %tr
+          %th= t(:license_number)
+          %td= ticket.license_number
+        %tr
+          %th= t(:vehicle_id)
+          %td= ticket.vehicle_id
+        %tr
+          %th= t(:type_of_service)
+          %td
             - if ticket.sling
               .badge.badge-info= t(:sling)
             - if ticket.hoist_tow
@@ -149,11 +106,9 @@
               .badge.badge-info= t(:recovery)
             - unless ticket.other.empty?
               .badge.badge-info= t(:other) + ' ' + ticket.other
-      %li
-        %span.key
-          = t(:special_equipment)
-        %span.val
-          %span.text-nowrap
+        %tr
+          %th= t(:special_equipment)
+          %td
             - if ticket.special_equipment_single_line_winching
               .badge.badge-info= t(:single_line_winching)
             - if ticket.special_equipment_dual_line_winching
@@ -167,14 +122,16 @@
             - if ticket.special_equipment_dolly
               .badge.badge-info= t(:dolly)
             - unless ticket.other.empty?
-              .badge.badge-info= t(:other) + ' ' + ticket.other
-      %li
-        %span.key
-          = t(:operators_comments)
-        %span.val
-          %span.text-nowrap= ticket.operators_comments
-      %li
-        %span.key
-          = t(:status)
-        %span.val
-          %span.text-nowrap= ticket.status
+              .badge.badge-info= t(:other) + ' ' + ticket.other 
+        %tr
+          %th= t(:operators_comments)
+          %td= ticket.operators_comments
+        %tr
+          %th= t(:status)
+          %td= ticket.status
+        %tr
+          %th= t(:created_at)
+          %td= ticket.created_at
+        %tr
+          %th= t(:updated_at)
+          %td= ticket.updated_at
