@@ -55,4 +55,17 @@ module ApplicationHelper
         ['Wyoming', 'WY']
       ]
   end
+
+  def ticket_status
+      [
+        ['new', 'new'],
+        ['en_route', 'en_route'],
+        ['on_scene', 'on_scene'],
+        ['in_tow', 'in_tow'],
+        ['at_yard', 'at_yard'],
+        ['released', 'released'],
+        ['auction', 'auction'],
+        ['vehicle_on_hold', 'vehicle_on_hold'],
+      ]
+  end
 end

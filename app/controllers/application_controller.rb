@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   layout 'application/default'
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
