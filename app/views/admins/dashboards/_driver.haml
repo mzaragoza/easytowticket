@@ -8,6 +8,7 @@
           %th
           %th= t(:id)
           %th= t(:created_by)
+          %th= t(:status)
           %th{class: 'hidden-phone'}= t(:driver)
           %th{class: 'hidden-phone'}= t(:created_at)
           %th{class: 'hidden-phone'}= t(:location_of_viecle)
@@ -23,6 +24,7 @@
             %td= link_to 'Show', admins_ticket_path(t), class: 'btn'
             %td= t.identification
             %td= t.created_by.name if t.created_by_id
+            %td= t.status
             %td{class: 'hidden-phone'}= t.driver.name if t.driver_id
             %td{class: 'hidden-phone'}= t.created_at.in_time_zone(current_account.time_zone).strftime('%D %r')
             %td{class: 'hidden-phone'}= t.location_of_viecle
