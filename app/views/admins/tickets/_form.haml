@@ -148,7 +148,7 @@
     .mws-form-row.bordered
       %label.mws-form-label= t(:status)
       .mws-form-item
-        = f.input :status, :label => false, input_html: { class: 'required small', size: '' }
+        = f.input :status, :collection => ticket_status,  :as => :select, include_blank: false, :label => false
   .mws-button-row
     = f.button :submit, :class => 'btn btn-info'
     %input.btn{type: "reset", value: "Reset"}/
