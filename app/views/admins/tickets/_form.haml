@@ -1,155 +1,106 @@
 = simple_form_for([:admins, ticket], :html => {:class => 'mws-form' }) do |f|
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:driver)
-      .mws-form-item
-        = f.input :driver_id, :as => :select, :collection => current_account.admins.where(:is_driver => true), :label => false, include_blank: false
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:location_of_viecle)
-      .mws-form-item
-        = f.input :location_of_viecle, as: :text, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:name)
-      .mws-form-item
-        = f.input :name, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:phone)
-      .mws-form-item
-        = f.input :phone, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:address)
-      .mws-form-item
-        = f.input :address, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:address2)
-      .mws-form-item
-        = f.input :address2, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:city)
-      .mws-form-item
-        = f.input :city, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:state)
-      .mws-form-item
-        = f.input :state, :as => :select, :collection => us_states, :label => false
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:zip)
-      .mws-form-item
-        = f.input :zip, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:millage_finish)
-      .mws-form-item
-        = f.input :milleage_finish, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:millage_start)
-      .mws-form-item
-        = f.input :milleage_start, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:servie_time_finish)
-      .mws-form-item
-        = f.input :service_time_finish, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:servie_time_start)
-      .mws-form-item
-        = f.input :service_time_start, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:extra_truck_finish)
-      .mws-form-item
-        = f.input :extra_truck_finish, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:extra_truck_start)
-      .mws-form-item
-        = f.input :extra_truck_start, as: :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:car_year)
-      .mws-form-item
-        = f.input :car_year, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:car_make)
-      .mws-form-item
-        = f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:car_model)
-      .mws-form-item
-        = f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:car_color)
-      .mws-form-item
-        = f.input :car_color, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:driver)
-      .mws-form-item
-        = f.input :driver, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:state)
-      .mws-form-item
-        = f.input :state, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:license_number)
-      .mws-form-item
-        = f.input :license_number, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:vin_number)
-      .mws-form-item
-        = f.input :vin_number, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:type_of_service)
-      .mws-form-item
-        = f.input :sling
-        = f.input :hoist_tow
-        = f.input :wheel_lift
-        = f.input :flad_bed
-        = f.input :start
-        = f.input :lock_out
-        = f.input :flat_tire
-        = f.input :out_of_gas
-        = f.input :wreck
-        = f.input :recovery
-        = f.input :other, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:special_equipment)
-      .mws-form-item
-        = f.input :special_equipment_single_line_winching
-        = f.input :special_equipment_dual_line_winching
-        = f.input :special_equipment_snatch_blocks
-        = f.input :special_equipment_scotch_blocks
-        = f.input :special_equipment_dolly
-        = f.input :special_equipment_other, :label => t(:other), input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:operators_comments)
-      .mws-form-item
-        = f.input :operators_comments, as: :text, :label => false, input_html: { class: 'required small', size: '' }
-  .mws-form-inline
-    .mws-form-row.bordered
-      %label.mws-form-label= t(:status)
-      .mws-form-item
-        = f.input :status, :collection => ticket_status,  :as => :select, include_blank: false, :label => false
-  .mws-button-row
+  .control-group
+    %label.control-label= t(:created_by)
+    .controls= f.input :created_by_id, :as => :select, :collection => current_account.admins.where(:is_driver => true, :active => true), :label => false, include_blank: false
+    %label.control-label= t(:requested_by)
+    .controls
+      -# THIS NEEDS TO BE A PICK LIST 
+      = f.input :requested_by_id, :as => :select, :collection => current_account.admins.where(:is_driver => true, :active => true), :label => false, include_blank: false
+    %label.control-label= t(:driver)
+    .controls= f.input :driver_id, :as => :select, :collection => current_account.admins.where(:is_driver => true), :label => false, include_blank: false
+    %label.control-label= t(:truck)
+    .controls
+      -# This need to be current_account.trucks
+      = f.input :truck_id, :as => :select, :collection => current_account.admins.where(:is_driver => true), :label => false, include_blank: false
+    %label.control-label= t(:location_of_viecle)
+    .controls= f.input :location_of_viecle, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:name)
+    .controls= f.input :name, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:phone)
+    .controls= f.input :phone, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:address)
+    .controls= f.input :address, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:address2)
+    .controls= f.input :address2, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:city)
+    .controls= f.input :city, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:state)
+    .controls= f.input :state, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:zip)
+    .controls= f.input :zip, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:license_number)
+    .controls= f.input :license_number, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:service_time_start)
+    .controls= f.input :service_time_start, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:service_time_finish)
+    .controls= f.input :service_time_finish, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:extra_truck_start)
+    .controls= f.input :extra_truck_start, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:extra_truck_finish)
+    .controls= f.input :extra_truck_finish, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:milleage_start)
+    .controls= f.input :milleage_start, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:milleage_finish)
+    .controls= f.input :milleage_finish, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:car_year)
+    .controls= f.input :car_year, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:car_make)
+    .controls= f.input :car_make, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:car_model)
+    .controls= f.input :car_model, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:car_color)
+    .controls= f.input :car_color, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:vin_number)
+    .controls= f.input :vin_number, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:tag_number)
+    .controls= f.input :tag_number, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:type_of_service)
+    .controls
+      = f.input :sling
+      = f.input :hoist_tow
+      = f.input :wheel_lift
+      = f.input :start
+      = f.input :lock_out
+      = f.input :flat_tire
+      = f.input :out_of_gas
+      = f.input :wreck
+      = f.input :recovery
+    %label.control-label= t(:other)
+    .controls= f.input :other, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:special_equipment)
+    .controls
+      = f.input :special_equipment_single_line_winching
+      = f.input :special_equipment_dual_line_winching
+      = f.input :special_equipment_snatch_blocks
+      = f.input :special_equipment_single_line_winching
+      = f.input :special_equipment_scotch_blocks
+      = f.input :special_equipment_dolly
+    %label.control-label= t(:other)
+    .controls= f.input :special_equipment_other, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:tow_destination)
+    .controls= f.input :tow_destination, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:operators_comments)
+    .controls= f.input :operators_comments, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:status)
+    .controls
+      - # Picklist
+      = f.input :status, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= f.input :on_hold
+    .control-group
+    %label.control-label= t(:charges)
+    %label.control-label= t(:milleage_charge)
+    .controls= f.input :milleage_charge, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:towing_charge)
+    .controls= f.input :towing_charge, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:labor_charge)
+    .controls= f.input :labor_charge, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:storage_charge)
+    .controls= f.input :storage_charge, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:storage_charge)
+    .controls= f.input :administration_fee, :label => false, input_html: { class: 'required small', size: '' }
+    %label.control-label= t(:tax)
+    .controls= f.input :tax, :label => false, input_html: { class: 'required small', size: '' }
+  .form-actions
     = f.button :submit, :class => 'btn btn-info'
     %input.btn{type: "reset", value: "Reset"}/
 

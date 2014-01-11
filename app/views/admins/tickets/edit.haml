@@ -1,6 +1,7 @@
-.mws-panel.grid_8
-  .mws-panel-header
-    %span Update Ticket
-  .mws-panel-body.no-padding
+.span12.widget
+  .widget-header
+    %span.title 
+      Update Ticket #{ticket.identification}
+  .widget-content.form-container
     = render 'form'
 

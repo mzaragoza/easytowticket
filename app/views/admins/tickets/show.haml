@@ -146,7 +146,7 @@
             - if ticket.special_equipment_dolly
               .badge.badge-info= t(:dolly)
             - unless ticket.other.empty?
-              .badge.badge-info= t(:other) + ' ' + ticket.other 
+              .badge.badge-info= t(:other) + ' ' + ticket.special_equipment_other
         %tr
           %th= t(:tow_destination)
           %td= ticket.tow_destination
