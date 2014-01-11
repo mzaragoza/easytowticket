@@ -25,19 +25,19 @@
     %label.control-label= t(:city)
     .controls= f.input :city, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:state)
-    .controls= f.input :state, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :state, :as => :select, :label => false, :collection => us_states
     %label.control-label= t(:zip)
     .controls= f.input :zip, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:license_number)
     .controls= f.input :license_number, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:service_time_start)
-    .controls= f.input :service_time_start, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :service_time_start, :as => :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:service_time_finish)
-    .controls= f.input :service_time_finish, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :service_time_finish, :as => :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:extra_truck_start)
-    .controls= f.input :extra_truck_start, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :extra_truck_start, :as => :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:extra_truck_finish)
-    .controls= f.input :extra_truck_finish, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :extra_truck_finish, :as => :datetime_picker, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:milleage_start)
     .controls= f.input :milleage_start, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:milleage_finish)
@@ -82,9 +82,7 @@
     %label.control-label= t(:operators_comments)
     .controls= f.input :operators_comments, :label => false, input_html: { class: 'required small', size: '' }
     %label.control-label= t(:status)
-    .controls
-      - # Picklist
-      = f.input :status, :label => false, input_html: { class: 'required small', size: '' }
+    .controls= f.input :status, :as => :select, :label => false, :collection => ticket_status
     %label.control-label= f.input :on_hold
     .control-group
     %label.control-label= t(:charges)
