@@ -1,9 +1,8 @@
 !!!
-/[if lt IE 7 ] <html class="lt-ie9 lt-ie8 lt-ie7 ie6" lang="en">
-/[if IE 7 ] <html class="lt-ie9 lt-ie8 ie7" lang="en">
-/[if IE 8 ] <html class="lt-ie9 ie8" lang="en">
-/[if IE 9 ] <html class="ie9" lang="en">
-/ [if (gt IE 9)|!(IE)]><!
+/[if lt IE 7] <html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+/[if IE 7] <html class="lt-ie9 lt-ie8" lang="en">
+/[if IE 8] <html class="lt-ie9" lang="en">
+/ [if gt IE 8]><!
 %html{lang: "en"}
   / <![endif]
   %head
@@ -11,85 +10,476 @@
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %meta{content: "", name: "description"}/
     %meta{content: "", name: "author"}/
-    / @font-face Fonts
-    %link{href: "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/normalize.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/skeleton.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/typography.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/layout.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/form.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/shortcodes.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/elements.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/css/ie.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/icons/glyphicons/style.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/icons/zocial/zocial.css", rel: "stylesheet"}/
-    %link{href: "/assets/assets/icons/social/social.css", rel: "stylesheet"}/
-    %link{href: "/assets/plugins/layerslider/css/layerslider.css", rel: "stylesheet"}/
-    %link{href: "/assets/plugins/flexslider/flexslider.css", rel: "stylesheet"}/
-    %link{href: "/assets/plugins/magnificpopup/jquery.magnific-popup.css", rel: "stylesheet"}/
+    / Bootstrap Stylesheet
+    %link{href: "/assets/bootstrap/css/bootstrap.min.css", media: "all", rel: "stylesheet"}/
+    / jquery-ui Stylesheets
+    %link{href: "/assets/assets/jui/css/jquery-ui.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/jui/jquery-ui.custom.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/jui/timepicker/jquery-ui-timepicker.css", media: "screen", rel: "stylesheet"}/
+    / Uniform Stylesheet
+    %link{href: "/assets/plugins/uniform/css/uniform.default.css", media: "screen", rel: "stylesheet"}/
+    / Plugin Stylsheets first to ease overrides
+    / End Plugin Stylesheets
+    / Main Layout Stylesheet
+    %link{href: "/assets/assets/css/fonts/icomoon/style.css", media: "screen", rel: "stylesheet"}/
+    %link{href: "/assets/assets/css/main-style.css", media: "screen", rel: "stylesheet"}/
+    / Le HTML5 shim, for IE6-8 support of HTML5 elements
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    %title Easy Tow Tickets
-  %body
-    .main-wrap
-      %header.header
-        .container
-          .sixteen.columns
-            .header-row
-              .header-col.brand
-                %a.logo{href: "#"}
-                  %img{alt: "Youxi", src: "/assets/assets/img/brand-logo.png"}/
-                %span.tagline Awesome Responsive Template
-              %nav.header-col.navigation
-                %ul
-                  %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'index' }"}
-                    = link_to t(:home), root_path
-                  %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'prices' }"}
-                    = link_to t(:prices), prices_path
-                  %li{:class => "#{'active' if params[:controller] == 'leads' and params[:action] == 'new' }"}
-                    = link_to t(:contact_us), contact_us_path
-                  %li{:class => "#{'active' if params[:controller] == 'pages' and params[:action] == 'prices' }"}
-                    = link_to t(:login), admins_dashboard_path
-        = yield
-      %footer.footer
-        .footer-top
+    %title MoonCake :: Responsive Admin Template - Form Cloning
+  %body{"data-fixed-sidebar" => "false", "data-show-sidebar-toggle-button" => "true"}
+    #wrapper
+      %header#header.navbar.navbar-inverse
+        .navbar-inner
           .container
-            .one-third.column
-              .footer-logo
-              %p Youxi is a HTML5 template suitable for any blog or business websites. It features tons of widgets and elements, all cleanly coded with the latest web standards. The template is also responsive and retina ready, making it perfect for use across devices and platforms.
-            .one-third.column
-              %h4 Our Flickr Stream
-            .one-third.column
-              %h4 Latest Tweets
-        .footer-bottom
-          .container
-            .eight.columns
-              Copyright 2013.
-              = succeed "." do
-                %a{href: "http://www.youxithemes.com"} Youxi Themes
-            .eight.columns
-              %ul.footer-nav
-                %li
-                  %a{href: "index.html"} Home
-                %li
-                  %a{href: "portfolio-3.html"} Portfolio
-                %li
-                  %a{href: "blog.html"} Blog
-                %li
-                  %a{href: "contact.html"} Contact Us
-    %script{src: "/assets/assets/js/jquery-1.10.2.min.js"}
-    %script{src: "/assets/plugins/jflickrfeed/jflickrfeed.min.js"}
-    %script{src: "/assets/plugins/tweet/jquery.tweet.min.js"}
-    %script{src: "/assets/plugins/fitvids/jquery.fitvids.min.js"}
-    %script{src: "/assets/plugins/map/gmap3.min.js"}
-    %script{src: "/assets/plugins/isotope/jquery.isotope.min.js"}
-    %script{src: "/assets/plugins/caroufredsel/jquery.carouFredSel-6.2.1-packed.js"}
-    %script{src: "/assets/plugins/flexslider/jquery.flexslider-min.js"}
-    %script{src: "/assets/assets/js/jquery.timeline.min.js"}
-    %script{src: "/assets/plugins/magnificpopup/jquery.magnific-popup.min.js"}
-    %script{src: "/assets/plugins/layerslider/js/jquery-easing-1.3.js"}
-    %script{src: "/assets/plugins/layerslider/js/jquerytransit.js"}
-    %script{src: "/assets/plugins/layerslider/js/layerslider.transitions.js"}
-    %script{src: "/assets/plugins/layerslider/js/layerslider.kreaturamedia.jquery.min.js"}
-    %script{src: "/assets/assets/js/youxi.plugins.min.js"}
-    %script{src: "/assets/assets/js/youxi.setup.js"}
+            .brand-wrap.pull-left
+              .brand-img
+                %a.brand{href: "#"}
+                  %img{alt: "", src: "assets/images/logo.png", style: "width: 117px; height: 21px;"}/
+            #header-right.clearfix
+              #nav-toggle.collapsed{"data-target" => "#navigation", "data-toggle" => "collapse"}
+                %i.icon-caret-down
+              #header-search
+                %span#search-toggle{"data-toggle" => "dropdown"}
+                  %i.icon-search
+                %form.navbar-search
+                  %input.search-query{placeholder: "Search", type: "text"}/
+              #dropdown-lists
+                .item-wrap
+                  %a.item{"data-toggle" => "dropdown", href: "#"}
+                    %span.item-icon
+                      %i.icon-exclamation-sign
+                    %span.item-label Notifications
+                    %span.item-count 4
+                  %ul.dropdown-menu
+                    %li.dropdown-item-wrap
+                      %ul
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong John Doe
+                              commented on your photo
+                              %span.time 13 minutes ago
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong Jane Roe
+                              commented on your photo
+                              %span.time 27 minutes ago
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong Billy John
+                              commented on your photo
+                              %span.time 43 minutes ago
+                    %li
+                      %a{href: "#"} View all notifications
+                .item-wrap
+                  %a.item{"data-toggle" => "dropdown", href: "#"}
+                    %span.item-icon
+                      %i.icon-envelope
+                    %span.item-label Messages
+                    %span.item-count 16
+                  %ul.dropdown-menu
+                    %li.dropdown-item-wrap
+                      %ul
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong John Doe
+                              %br/
+                              Hello, do you have time to go out tomorrow?
+                              %span.time 13 minutes ago
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong Jane Roe
+                              %br/
+                              Hey, the reports said that you were...
+                              %span.time 27 minutes ago
+                        %li
+                          %a{href: "#"}
+                            %span.thumbnail
+                              %img{alt: "", src: "assets/images/pp.jpg"}/
+                            %span.details
+                              %strong Billy John
+                              %br/
+                              Can I borrow your new camera for taking...
+                              %span.time About an hour ago
+                    %li
+                      %a{href: "mail.html"} View all messages
+              #header-functions.pull-right
+                #user-info.clearfix
+                  %span.info
+                    Welcome
+                    %span.name Shana-chan
+                  .avatar
+                    %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                      %img{alt: "Avatar", src: "assets/images/pp.jpg"}/
+                    %ul.dropdown-menu.pull-right
+                      %li
+                        %a{href: "profile.html"}
+                          %i.icol-user
+                          My Profile
+                      %li
+                        %a{href: "#"}
+                          %i.icol-layout
+                          My Invoices
+                      %li.divider
+                      %li
+                        %a{href: "index.html"}
+                          %i.icol-key
+                          Logout
+                #logout-ribbon
+                  %a{href: "index.html"}
+                    %i.icon-off
+      #content-wrap
+        #content
+          #content-outer
+            #content-inner
+              %aside#sidebar
+                %nav#navigation.collapse
+                  %ul
+                    %li
+                      %span{title: "General"}
+                        %i.icon-home
+                        %span.nav-title General
+                      %ul.inner-nav
+                        %li
+                          %a{href: "dashboard.html"}
+                            %i.icol-dashboard
+                            Dashboard
+                        %li
+                          %a{href: "../simple/dashboard.html"}
+                            %i.icol-plugin
+                            Simple Version
+                        %li
+                          %a{href: "affix.html"}
+                            %i.icol-pin
+                            Fixed Sidebar
+                        %li
+                          %a{href: "calendar.html"}
+                            %i.icol-calendar-2
+                            Calendar
+                        %li
+                          %a{href: "icons.html"}
+                            %i.icol-lifebuoy
+                            Icons
+                        %li
+                          %a{href: "grids.html"}
+                            %i.icol-grid
+                            Grids
+                        %li
+                          %a{href: "typography.html"}
+                            %i.icol-font
+                            Typography
+                    %li
+                      %span{title: "Table"}
+                        %i.icon-table
+                        %span.nav-title Table
+                      %ul.inner-nav
+                        %li
+                          %a{href: "tables.html"}
+                            %i.icol-style
+                            Static Tables
+                        %li
+                          %a{href: "responsive_tables.html"}
+                            %i.icol-hammer-screwdriver
+                            Responsive Tables
+                        %li
+                          %a{href: "data_tables.html"}
+                            %i.icol-table
+                            Data Tables
+                        %li
+                          %a{href: "detail_view.html"}
+                            %i.icol-eye
+                            Detail View Table
+                    %li
+                      %span{title: "Statistic"}
+                        %i.icon-graph
+                        %span.nav-title Statistic
+                      %ul.inner-nav
+                        %li
+                          %a{href: "statistic.html"}
+                            %i.icol-chart-curve
+                            Statistical Elements
+                        %li
+                          %a{href: "charts_gallery.html"}
+                            %i.icol-chart-pie
+                            Charts Gallery
+                    %li.active
+                      %span{title: "Form"}
+                        %i.icon-list
+                        %span.nav-title Form
+                      %ul.inner-nav
+                        %li
+                          %a{href: "form_layouts.html"}
+                            %i.icol-layout-select
+                            Form Layouts
+                        %li
+                          %a{href: "form_elements.html"}
+                            %i.icol-ui-text-field-password
+                            Form Elements
+                        %li
+                          %a{href: "form_wizard.html"}
+                            %i.icol-wand
+                            Form Wizard
+                        %li
+                          %a{href: "form_validation.html"}
+                            %i.icol-accept
+                            Form Validation
+                        %li.active
+                          %a{href: "form_cloning.html"}
+                            %i.icol-asterisk-orange
+                            Form Cloning
+                        %li
+                          %a{href: "wysiwyg.html"}
+                            %i.icol-pencil
+                            WYSIWYG
+                    %li
+                      %span{title: "Elements"}
+                        %i.icon-cogs
+                        %span.nav-title Elements
+                      %ul.inner-nav
+                        %li
+                          %a{href: "ui_bootstrap.html"}
+                            %i.icol-ui-tab-content
+                            Bootstrap Elements
+                        %li
+                          %a{href: "ui_components.html"}
+                            %i.icol-pipette
+                            Other Elements
+                        %li
+                          %a{href: "alerts.html"}
+                            %i.icol-error
+                            Alerts and Notifications
+                        %li
+                          %a{href: "boxes.html"}
+                            %i.icol-cog
+                            Widget Boxes
+                        %li
+                          %a{href: "buttons.html"}
+                            %i.icol-joystick
+                            Buttons
+                        %li
+                          %a{href: "file_uploader.html"}
+                            %i.icol-computer
+                            File Uploader
+                        %li
+                          %a{href: "file_manager.html"}
+                            %i.icol-databases
+                            File Manager
+                    %li
+                      %span{title: "Extra"}
+                        %i.icon-gift
+                        %span.nav-title Extra
+                      %ul.inner-nav
+                        %li
+                          %a{href: "profile.html"}
+                            %i.icol-user
+                            Profile Page
+                        %li
+                          %a{href: "mail.html"}
+                            %i.icol-email
+                            Mail Page
+                        %li
+                          %a{href: "invoice.html"}
+                            %i.icol-blog
+                            Invoice Page
+                        %li
+                          %a{href: "widgets.html"}
+                            %i.icol-ruby
+                            Custom Widgets
+                        %li
+                          %a{href: "gallery.html"}
+                            %i.icol-images
+                            Image Gallery
+                        %li
+                          %a{href: "contacts.html"}
+                            %i.icol-vcard
+                            Contact List
+                        %li
+                          %a{href: "404.html"}
+                            %i.icol-error
+                            Error Page (404)
+              #sidebar-separator
+              %section#main.clearfix
+                #main-header.page-header
+                  %ul.breadcrumb
+                    %li
+                      %i.icon-home>
+                      MoonCake
+                      %span.divider »
+                    %li
+                      %a{href: "#"} Form
+                      %span.divider »
+                    %li
+                      %a{href: "#"} Form Cloning
+                  %h1#main-heading
+                    Form Cloning
+                    %span This page shows how to duplicate form elements
+                #main-content
+                  .row-fluid
+                    .span6
+                      .widget
+                        .widget-header
+                          %span.title Basic Input Cloning
+                        .widget-content.form-container
+                          %form.form-horizontal
+                            %fieldset#input_cloning.sheepit-form
+                              %legend
+                                Input Cloning
+                                %span#input_cloning_controls.pull-right
+                                  %span#input_cloning_add.btn.btn-mini
+                                    %i.icon-plus
+                              #input_cloning_template.control-group
+                                %label.control-label{for: "input_cloning_#index#_input"}
+                                  Text Input
+                                  %span#input_cloning_label
+                                .controls
+                                  %input{id: "input_cloning_#index#_input", name: "text[#index#]", type: "text"}/
+                                %span#input_cloning_remove_current.close ×
+                              #input_cloning_noforms_template.control-group
+                                %p.help-block Add a new input by clicking the (+) button above
+                            .form-actions
+                              %button.btn.btn-primary{type: "submit"} Save changes
+                              %button.btn{type: "reset"} Cancel
+                    .span6
+                      .widget
+                        .widget-header
+                          %span.title Optional Input Cloning
+                        .widget-content.form-container
+                          %form.form-horizontal
+                            %fieldset#oinput_cloning.sheepit-form
+                              %legend
+                                Input Cloning
+                                %span#oinput_cloning_controls.pull-right
+                                  %span#oinput_cloning_add.btn.btn-mini
+                                    %i.icon-plus
+                              #oinput_cloning_template.control-group
+                                %label.control-label{for: "oinput_cloning_#index#_input"}
+                                  Select Input
+                                  %span#oinput_cloning_label
+                                .controls
+                                  %select{id: "oinput_cloning_#index#_input", name: "sel[#index#]"}
+                                    %option Alabama
+                                    %option Alaska
+                                    %option Arizona
+                                    %option Arkansas
+                                    %option California
+                                    %option Colorado
+                                    %option Connecticut
+                                    %option Delaware
+                                    %option Florida
+                                    %option Georgia
+                                    %option Hawaii
+                                    %option Idaho
+                                    %option Illinois
+                                    %option Indiana
+                                    %option Iowa
+                                    %option Kansas
+                                    %option Kentucky
+                                    %option Louisiana
+                                    %option Maine
+                                    %option Maryland
+                                    %option Massachusetts
+                                    %option Michigan
+                                    %option Minnesota
+                                    %option Mississippi
+                                    %option Missouri
+                                    %option Montana
+                                    %option Nebraska
+                                    %option Nevada
+                                    %option New Hampshire
+                                    %option New Jersey
+                                    %option New Mexico
+                                    %option New York
+                                    %option North Dakota
+                                    %option North Carolina
+                                    %option Ohio
+                                    %option Oklahoma
+                                    %option Oregon
+                                    %option Pennsylvania
+                                    %option Rhode Island
+                                    %option South Carolina
+                                    %option South Dakota
+                                    %option Tennessee
+                                    %option Texas
+                                    %option Utah
+                                    %option Vermont
+                                    %option Virginia
+                                    %option Washington
+                                    %option West Virginia
+                                    %option Wisconsin
+                                    %option Wyoming
+                                %span#oinput_cloning_remove_current.close ×
+                              #oinput_cloning_noforms_template.control-group
+                                %p.help-block Add a new input by clicking the (+) button above
+                            .form-actions
+                              %button.btn.btn-primary{type: "submit"} Save changes
+                              %button.btn{type: "reset"} Cancel
+                  .row-fluid
+                    .span12
+                      .widget
+                        .widget-header
+                          %span.title Advanced Cloning Example
+                        .widget-content.form-container
+                          %form.form-vertical
+                            %fieldset#event_cloning
+                              %legend
+                                Events
+                                %span#event_cloning_controls.pull-right
+                                  %span#event_cloning_add.btn.btn-mini
+                                    %i.icon-plus
+                              #event_cloning_template.row-fluid.sheepit-form
+                                .control-group.clearfix
+                                  .span6
+                                    %label.control-label{for: "event_cloning_#index#_ename"} Name
+                                    .controls
+                                      %input.span12{id: "event_cloning_#index#_ename", name: "ename[#index#]", type: "text"}/
+                                  .span6
+                                    %label.control-label{for: "event_cloning_#index#_ename"} Date
+                                    .controls.controls-row
+                                      %input.span6.datepicker_s{id: "event_cloning_#index#_estart", name: "estart[#index#]", type: "text"}/
+                                      %input.span6.datepicker_e{id: "event_cloning_#index#_eend", name: "eend[#index#]", type: "text"}/
+                                  %span#event_cloning_remove_current.close ×
+                              #event_cloning_noforms_template.control-group
+                                %p.help-block There are no events
+                            .form-actions
+                              %button.btn.btn-primary{type: "submit"} Save changes
+                              %button.btn{type: "reset"} Cancel
+      %footer#footer
+        .footer-left MoonCake - Responsive Admin Template
+        .footer-right
+          %p Copyright 2012. All Rights Reserved.
+    / Core Scripts
+    %script{src: "/assets/assets/js/libs/jquery-1.8.3.min.js"}
+    %script{src: "/assets/bootstrap/js/bootstrap.min.js"}
+    %script{src: "/assets/assets/js/libs/jquery.placeholder.min.js"}
+    %script{src: "/assets/assets/js/libs/jquery.mousewheel.min.js"}
+    / Template Script
+    %script{src: "/assets/assets/js/template.js"}
+    %script{src: "/assets/assets/js/setup.js"}
+    / Customizer, remove if not needed
+    %script{src: "/assets/assets/js/customizer.js"}
+    / Uniform Script
+    %script{src: "/assets/plugins/uniform/jquery.uniform.min.js"}
+    / jquery-ui Scripts
+    %script{src: "/assets/assets/jui/js/jquery-ui-1.9.2.min.js"}
+    %script{src: "/assets/assets/jui/jquery-ui.custom.min.js"}
+    %script{src: "/assets/assets/jui/timepicker/jquery-ui-timepicker.min.js"}
+    %script{src: "/assets/assets/jui/jquery.ui.touch-punch.min.js"}
+    / Plugin Scripts
+    %script{src: "/assets/plugins/sheepit/jquery.sheepit.js"}
+    / Demo Scripts
+    %script{src: "/assets/assets/js/demo/form_cloning.js"}

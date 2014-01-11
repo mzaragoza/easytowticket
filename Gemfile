@@ -24,7 +24,6 @@ gem 'browser'
 gem 'simple_form'
 
 
-
 group :development do
   #gem 'meta_request'
   gem 'better_errors'

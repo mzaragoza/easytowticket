@@ -105,9 +105,8 @@
         .footer-left Easy Tow Ticket
         .footer-right
           %p Copyright 2012. All Rights Reserved.
-    / Core Scripts
-    //%script{src: "/assets/assets/js/libs/jquery-2.0.3.js"}
-    %script{src: "/assets/assets/js/libs/jquery-1.8.3.js"}
+    =# javascript_include_tag "admins/default"
+    %script{src: "/assets/assets/js/libs/jquery-1.8.3.min.js"}
     %script{src: "/assets/bootstrap/js/bootstrap.min.js"}
     %script{src: "/assets/assets/js/libs/jquery.placeholder.min.js"}
     %script{src: "/assets/assets/js/libs/jquery.mousewheel.min.js"}
@@ -124,13 +123,7 @@
     %script{src: "/assets/assets/jui/timepicker/jquery-ui-timepicker.min.js"}
     %script{src: "/assets/assets/jui/jquery.ui.touch-punch.min.js"}
     / Plugin Scripts
-    / DataTables
-    %script{src: "/assets/plugins/datatables/jquery.dataTables.min.js"}
-    %script{src: "/assets/plugins/datatables/TableTools/js/TableTools.min.js"}
-    %script{src: "/assets/plugins/datatables/FixedColumns/FixedColumns.min.js"}
-    %script{src: "/assets/plugins/datatables/dataTables.bootstrap.js"}
-    %script{src: "/assets/plugins/datatables/jquery.dataTables.columnFilter.js"}
+    %script{src: "/assets/plugins/sheepit/jquery.sheepit.js"}
     / Demo Scripts
-    %script{src: "/assets/assets/js/demo/dataTables.js"}
-    %script{src: "/assets/javascripts/bootstrap-datepicker/core.js"}
+    %script{src: "/assets/assets/js/demo/form_cloning.js"}
 = render '/shared/uservoise'
